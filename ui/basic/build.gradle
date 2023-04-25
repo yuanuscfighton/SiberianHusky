@@ -6,11 +6,11 @@ plugins {
 def configs = rootProject.ext.dependencies
 
 android {
-    namespace 'com.laioffer.ui.conflict'
-    compileSdk rootProject.ext.compileSdkVersion
+    namespace 'com.laioffer.ui.basic'
+    compileSdk rootProject.ext.targetSdkVersion
 
     defaultConfig {
-        applicationId "com.laioffer.ui.conflict"
+        applicationId "com.laioffer.ui.basic"
         minSdk rootProject.ext.minSdkVersion
         targetSdk rootProject.ext.targetSdkVersion
         versionCode 1

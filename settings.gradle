@@ -14,7 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Husky"
 include ':app'
-include ':ui'
-include ':ui:conflict'
 include ':fragment'
 include ':fragment:fragment'
+include ':ui'
+include ':ui:basic'
