@@ -1,0 +1,44 @@
+// Define versions in a single place
+ext {
+    // Sdk and tools
+    compileSdkVersion = 30
+    minSdkVersion = 28
+    targetSdkVersion = 30
+
+    versionCode = 1
+    versionName = "1.0"
+
+    dependencies = [
+            // kotlin依赖
+            "core-ktx"                   : "androidx.core:core-ktx:1.9.0",
+            "appcompat"                  : "androidx.appcompat:appcompat:1.6.1",
+            "material"                   : "com.google.android.material:material:1.8.0",
+            "constraintlayout"           : "androidx.constraintlayout:constraintlayout:2.1.4",
+            "junit"                      : "junit:junit:4.13.2",
+
+            // RxJava
+            "rxjava"                     : "io.reactivex.rxjava3:rxjava:3.1.5",
+            "rxandroid"                  : "io.reactivex.rxjava3:rxandroid:3.0.0",
+
+            // 操作功能防抖
+            "rxbinding"                  : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
+
+            // stetho
+            "stetho"                     : "com.facebook.stetho:stetho:1.4.2",
+            // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
+            "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
+            // OkHttp
+            "okhttp3"                    : "com.squareup.okhttp3:okhttp:4.10.0",
+            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:3.5.0",
+
+            // Retrofit2
+            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.4.0",
+            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.4.0",
+            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.4.0",
+            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.4.0",
+            "retrofit2-adapter-rxjava"   : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+
+            "gson"                       : "com.google.code.gson:gson:2.8.6",
+    ]
+
+}
