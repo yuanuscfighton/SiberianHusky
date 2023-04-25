@@ -6,11 +6,11 @@ plugins {
 def configs = rootProject.ext.dependencies
 
 android {
-    namespace 'com.laioffer.ui.basic'
+    namespace 'com.laioffer.fragment.viewpager'
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.laioffer.ui.basic"
+        applicationId "com.laioffer.fragment.viewpager"
         minSdk rootProject.ext.minSdkVersion
         targetSdk rootProject.ext.targetSdkVersion
         versionCode 1

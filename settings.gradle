@@ -16,5 +16,6 @@ rootProject.name = "Husky"
 include ':app'
 include ':fragment'
 include ':fragment:fragment'
+include ':fragment:viewpager'
 include ':ui'
 include ':ui:basic'
