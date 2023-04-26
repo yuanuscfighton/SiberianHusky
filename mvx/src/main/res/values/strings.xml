@@ -1,3 +1,5 @@
 <resources>
-  <string name="app_name">mvx</string>
+    <string name="app_name">游戏</string>
+    <string name="winner">赢了</string>
+    <string name="action_reset">重置</string>
 </resources>
