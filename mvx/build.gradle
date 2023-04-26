@@ -1,20 +1,22 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
 
 def configs = rootProject.ext.dependencies
 
 android {
-    namespace 'com.laioffer'
+    namespace 'com.laioffer.mvx'
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
+        applicationId "com.laioffer.mvx"
         minSdk rootProject.ext.minSdkVersion
         targetSdk rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
