@@ -24,7 +24,7 @@ ext {
             "rxbinding"                  : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
 
             // stetho
-            "stetho"                     : "com.facebook.stetho:stetho:1.4.2",
+            "stetho"                     : "com.facebook.stetho:stetho:1.6.0",
             // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
             "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
             // OkHttp
@@ -38,7 +38,7 @@ ext {
             "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.4.0",
             "retrofit2-adapter-rxjava"   : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
 
-            "gson"                       : "com.google.code.gson:gson:2.8.6",
+            "gson"                       : "com.google.code.gson:gson:2.8.9",
     ]
 
 }
