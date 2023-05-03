@@ -17,8 +17,8 @@ ext {
             "junit"                      : "junit:junit:4.13.2",
 
             // RxJava
-            "rxjava"                     : "io.reactivex.rxjava3:rxjava:3.1.5",
-            "rxandroid"                  : "io.reactivex.rxjava3:rxandroid:3.0.0",
+            "rxjava"                     : "io.reactivex.rxjava3:rxjava:3.1.6",
+            "rxandroid"                  : "io.reactivex.rxjava3:rxandroid:3.0.2",
 
             // 操作功能防抖
             "rxbinding"                  : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
@@ -28,17 +28,17 @@ ext {
             // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
             "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
             // OkHttp
-            "okhttp3"                    : "com.squareup.okhttp3:okhttp:4.10.0",
-            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:3.5.0",
+            "okhttp3"                    : "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
+            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11",
 
             // Retrofit2
-            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.4.0",
-            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.4.0",
-            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.4.0",
-            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.4.0",
-            "retrofit2-adapter-rxjava"   : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.9.0",
+            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.9.0",
+            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.9.0",
+            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.9.0",
+            "retrofit2-adapter-rxjava"   : "com.squareup.retrofit2:adapter-rxjava2:2.9.0",
 
-            "gson"                       : "com.google.code.gson:gson:2.8.9",
+            "gson"                       : "com.google.code.gson:gson:2.10.1",
     ]
 
 }
