@@ -28,5 +28,7 @@ include ':tools'
 include ':kotlin'
 include ':basic-info'
 include ':design-pattern'
+include ':glide'
+
 include ':ui:conflict'
 
