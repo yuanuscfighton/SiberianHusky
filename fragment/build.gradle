@@ -6,7 +6,7 @@ plugins {
 def configs = rootProject.ext.dependencies
 
 android {
-    namespace 'com.laioffer'
+    namespace 'com.laioffer.fragment'
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
