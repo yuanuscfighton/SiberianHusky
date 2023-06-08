@@ -20,9 +20,13 @@ include ':fragment:viewpager'
 include ':ui'
 include ':ui:basic'
 
+include ':mvx'
+
+
 include ':tools'
 
 include ':kotlin'
 include ':basic-info'
 include ':design-pattern'
 include ':ui:conflict'
+
