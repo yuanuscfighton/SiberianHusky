@@ -19,19 +19,12 @@ include ':fragment:fragment'
 include ':fragment:viewpager'
 include ':ui'
 include ':ui:basic'
-
+include ':ui:conflict'
 include ':mvx'
-
-
-include ':tools'
-
+include ':network'
+include ':network:rxjava'
 include ':kotlin'
 include ':basic-info'
-include ':design-pattern'
-
 include ':basic-info:juc'
-
+include ':design-pattern'
 include ':glide'
-
-include ':ui:conflict'
-
