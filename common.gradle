@@ -28,6 +28,23 @@ ext {
             // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
             "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
             // OkHttp
+
+            "okhttp3"                    : "com.squareup.okhttp3:okhttp:4.10.0",
+            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:3.5.0",
+            // Retrofit2
+            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.4.0",
+            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.4.0",
+            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.4.0",
+            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.4.0",
+            "retrofit2-adapter-rxjava"   : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            // Gson
+            "gson"                       : "com.google.code.gson:gson:2.8.6",
+
+            // ViewPager
+            "ViewPager"                  : "androidx.viewpager:viewpager:1.0.0",
+            // ViewPager2
+            "ViewPager2"                 : "androidx.viewpager2:viewpager2:1.0.0"
+
             "okhttp3"                    : "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
             "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11",
 
@@ -40,7 +57,9 @@ ext {
 
             "gson"                       : "com.google.code.gson:gson:2.10.1",
 
+
             "glide"                      : "com.github.bumptech.glide:glide:4.15.0"
+
     ]
 
 }
