@@ -28,6 +28,9 @@ include ':tools'
 include ':kotlin'
 include ':basic-info'
 include ':design-pattern'
+
+include ':basic-info:juc'
+
 include ':glide'
 
 include ':ui:conflict'
