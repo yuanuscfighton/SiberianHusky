@@ -37,6 +37,8 @@ public class BasisView extends View {
     paint.setStyle(Paint.Style.STROKE);
     // 设置笔画宽度
     paint.setStrokeWidth(50);
+    // 打开抗锯齿功能
+    paint.setAntiAlias(true);
     // 画圆
     canvas.drawCircle(190, 200, 150, paint);
   }

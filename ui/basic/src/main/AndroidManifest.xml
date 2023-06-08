@@ -17,6 +17,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name="com.laioffer.material.l1_toolbar.ToolbarActivity" />
+    <activity android:name="com.laioffer.material.l2_drawer.DrawerLayoutActivity" />
   </application>
 
 </manifest>
