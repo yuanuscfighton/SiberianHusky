@@ -19,6 +19,9 @@ include ':fragment:fragment'
 include ':fragment:viewpager'
 include ':ui'
 include ':ui:basic'
+
+include ':tools'
+
 include ':kotlin'
 include ':basic-info'
 include ':design-pattern'
