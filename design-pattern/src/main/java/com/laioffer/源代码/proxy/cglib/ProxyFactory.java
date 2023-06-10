@@ -2,10 +2,6 @@ package com.laioffer.源代码.proxy.cglib;
 
 import java.lang.reflect.Method;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
-
 public class ProxyFactory implements MethodInterceptor {
 
 	//ά��һ��Ŀ�����
