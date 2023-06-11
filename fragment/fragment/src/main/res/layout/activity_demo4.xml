@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:baselineAligned="false"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+      android:id="@+id/btn_show_fragment1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="显示Fragment1"
+      tools:ignore="ButtonStyle,HardcodedText" />
+
+    <Button
+      android:id="@+id/btn_show_fragment2"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="显示Fragment2"
+      tools:ignore="ButtonStyle,HardcodedText" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+      android:id="@+id/btn_show_fragment3"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="显示Fragment3"
+      tools:ignore="ButtonStyle,HardcodedText" />
+
+    <Button
+      android:id="@+id/btn_show_fragment4"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="显示Fragment4"
+      tools:ignore="ButtonStyle,HardcodedText" />
+  </LinearLayout>
+
+  <Button
+    android:id="@+id/btn_pop_back_stack"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="PopBackStack"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_pop_back_stack_to_fragment2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="BackToFragment2"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_pop_back_stack_to_fragment2_include"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="BackToFragment2(包含)"
+    tools:ignore="HardcodedText" />
+
+  <FrameLayout
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>

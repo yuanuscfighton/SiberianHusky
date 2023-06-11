@@ -17,6 +17,9 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name="com.laioffer.demo1.Demo1Activity" />
+    <activity android:name="com.laioffer.demo2.Demo2Activity" />
+    <activity android:name="com.laioffer.demo3.Demo3Activity" />
   </application>
 
 </manifest>
