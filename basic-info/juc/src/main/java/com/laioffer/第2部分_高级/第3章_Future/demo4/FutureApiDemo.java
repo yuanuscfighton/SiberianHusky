@@ -1,4 +1,4 @@
-package com.laioffer.part2_高级.第3章_Future.demo4;
+package com.laioffer.第2部分_高级.第3章_Future.demo4;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -34,5 +34,6 @@ public class FutureApiDemo {
     System.out.println(ft.get(3, TimeUnit.SECONDS));
   }
 }
-// 1.get容易导致阻塞，一般建议放在程序后面，一旦调用，非要得等到结果才会离开，不管你是否计算完成，容易程序阻塞
-// 2.
+
+// Future # get()缺点:
+// 一旦调用get()方法拿结果，如果计算没有完成容易导致程序阻塞
