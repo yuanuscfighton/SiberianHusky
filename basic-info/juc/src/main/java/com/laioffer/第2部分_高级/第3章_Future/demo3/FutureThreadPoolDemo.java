@@ -1,4 +1,4 @@
-package com.laioffer.part2_高级.第3章_Future.demo3;
+package com.laioffer.第2部分_高级.第3章_Future.demo3;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
