@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第5章_线程中断;
+package com.laioffer.第2部分_高级.第5章_线程中断.demo1_interrupt;
 
 import java.util.concurrent.TimeUnit;
 
