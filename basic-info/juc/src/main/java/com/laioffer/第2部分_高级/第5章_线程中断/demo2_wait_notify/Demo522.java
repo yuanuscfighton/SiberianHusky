@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第5章_线程中断.demo2_等待与唤醒;
+package com.laioffer.第2部分_高级.第5章_线程中断.demo2_wait_notify;
 
 import java.util.concurrent.TimeUnit;
 
