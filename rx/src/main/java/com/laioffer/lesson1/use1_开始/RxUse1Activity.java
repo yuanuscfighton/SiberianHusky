@@ -1,4 +1,4 @@
-package com.laioffer.use1_开始;
+package com.laioffer.lesson1.use1_开始;
 
 import androidx.appcompat.app.AppCompatActivity;
 

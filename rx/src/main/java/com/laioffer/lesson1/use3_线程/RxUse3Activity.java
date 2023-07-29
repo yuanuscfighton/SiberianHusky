@@ -1,4 +1,4 @@
-package com.laioffer.use2_map变换;
+package com.laioffer.lesson1.use3_线程;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
@@ -10,28 +10,23 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Function;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
- * 类的描述: 【RxJava思维编程】版本2: 增加map变换
- * Created by 春夏秋冬在中南 on 2023/6/19 23:55
+ * 类的描述: 【RxJava思维编程】版本3: 切换线程
+ * Created by 春夏秋冬在中南 on 2023/6/20 00:02
  */
-public class RxUse2Activity extends AppCompatActivity {
+public class RxUse3Activity extends AppCompatActivity {
 
   private final static String PATH = "http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg";
 
   private ProgressDialog mProgressDialog;
 
-  /*
-    第1步: onSubscribe()订阅的开始  ← 预备
-    第2步: 分发事件 just(xxx)      ← 开始
-    第3步: map变换
-    第4步: 显示UI
-    第5步: 完成事件
-   */
   public void download() {
     // 第2步: 分发事件
     // 起点: (Observable，被观察者)
@@ -57,6 +52,9 @@ public class RxUse2Activity extends AppCompatActivity {
           }
         })
 
+        .subscribeOn(Schedulers.io()) // 给上面的代码分配异步线程
+        .observeOn(AndroidSchedulers.mainThread()) // 给下面的代码分配主线程
+
         // subscribe: 将「起点」和「终点」订阅起来
         .subscribe(new Observer<Bitmap>() { // 终点(Observer，观察者)
 
@@ -64,8 +62,7 @@ public class RxUse2Activity extends AppCompatActivity {
           // 一订阅，就弹出loading弹窗
           @Override
           public void onSubscribe(Disposable d) {
-            mProgressDialog = new ProgressDialog(RxUse2Activity.this);
-            mProgressDialog.setTitle("加载中...");
+            mProgressDialog = new ProgressDialog(RxUse3Activity.this);
             mProgressDialog.show();
           }
 
