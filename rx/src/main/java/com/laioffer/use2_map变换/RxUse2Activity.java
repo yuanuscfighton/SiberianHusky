@@ -25,6 +25,13 @@ public class RxUse2Activity extends AppCompatActivity {
 
   private ProgressDialog mProgressDialog;
 
+  /*
+    第1步: onSubscribe()订阅的开始  ← 预备
+    第2步: 分发事件 just(xxx)      ← 开始
+    第3步: map变换
+    第4步: 显示UI
+    第5步: 完成事件
+   */
   public void download() {
     // 第2步: 分发事件
     // 起点: (Observable，被观察者)
@@ -58,6 +65,7 @@ public class RxUse2Activity extends AppCompatActivity {
           @Override
           public void onSubscribe(Disposable d) {
             mProgressDialog = new ProgressDialog(RxUse2Activity.this);
+            mProgressDialog.setTitle("加载中...");
             mProgressDialog.show();
           }
 
