@@ -19,12 +19,22 @@ public class DaemonDemo {
 
     t1.start();
 
-    // 暂停几秒钟线程
+    // 暂停几毫秒线程
     try {
-      TimeUnit.SECONDS.sleep(3);
-    } catch (Exception e) {
+      TimeUnit.MILLISECONDS.sleep(3000);
+    } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    System.out.println(Thread.currentThread().getName() + "\t end主线程");
+    System.out.println(Thread.currentThread().getName() + "\t 主线程-结束");
   }
 }
+
+/*
+t1	 开始运行, 用户线程
+main	 主线程-结束
+
+小结:
+(1) 此时程序没有结束，因为t1和main线程都是用户线程，二者相互独立，main线程结束了，t1线程不一定会结束
+(2) t1没有特殊设置，默认都是用户线程
+
+ */

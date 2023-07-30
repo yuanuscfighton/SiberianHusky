@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 public class DaemonDemo1 {
 
   public static void main(String[] args) {
-    // t1线程不做任何设置，默认是用户线程
     Thread t1 = new Thread(() -> {
       System.out.println(Thread.currentThread().getName() + "\t 开始运行, "
           + ((Thread.currentThread().isDaemon()) ? "守护线程" : "用户线程"));
@@ -19,17 +18,22 @@ public class DaemonDemo1 {
     t1.setDaemon(true);
     t1.start();
 
-    // 暂停几秒钟线程
+    // 暂停几毫秒线程
     try {
-      TimeUnit.SECONDS.sleep(3);
-    } catch (Exception e) {
+      TimeUnit.MILLISECONDS.sleep(3000);
+    } catch (InterruptedException e) {
       e.printStackTrace();
     }
 
-    System.out.println(Thread.currentThread().getName() + "\t end主线程");
-
-    /**
-     * t1和main线程都是用户线程，二者相互独立，main线程结束了，t1不一定会结束，因为都是用户线程
-     */
+    System.out.println(Thread.currentThread().getName() + "\t 主线程-结束");
   }
 }
+
+/*
+t1	 开始运行, 守护线程
+main	 主线程-结束
+
+小结:
+ t1作为守护线程，守护着用户线程，用户线程结束了，守护线程也就结束了
+
+ */
