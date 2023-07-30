@@ -7,4 +7,6 @@ package com.laioffer.tools;
 public class Constants {
 
   public static final String TAG4 = "Lesson4";
+
+  public static final String TAG5 = "Lesson5";
 }
