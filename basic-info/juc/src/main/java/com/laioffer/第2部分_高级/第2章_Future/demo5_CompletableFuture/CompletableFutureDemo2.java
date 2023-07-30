@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第3章_Future.demo5_CompletableFuture;
+package com.laioffer.第2部分_高级.第2章_Future.demo5_CompletableFuture;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

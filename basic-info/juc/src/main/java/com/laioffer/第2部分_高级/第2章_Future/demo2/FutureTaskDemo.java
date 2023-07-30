@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第3章_Future.demo2;
+package com.laioffer.第2部分_高级.第2章_Future.demo2;
 
 import java.util.concurrent.TimeUnit;
 
