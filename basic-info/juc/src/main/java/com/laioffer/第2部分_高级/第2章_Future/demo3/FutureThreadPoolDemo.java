@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class FutureThreadPoolDemo {
   public static void main(String[] args) throws ExecutionException, InterruptedException {
+    // 线程池: 线程复用
     ExecutorService threadPool = Executors.newFixedThreadPool(3);
 
     long startTimeMs = System.currentTimeMillis();
@@ -64,3 +65,16 @@ public class FutureThreadPoolDemo {
     threadPool.shutdown();
   }
 }
+
+/*
+
+1.没有调用FutureTask # get()方法
+    总共耗时: 205毫秒
+    main	 end
+
+2.调用FutureTask # get()方法
+    task1 结束
+    task2 结束
+    总共耗时: 703毫秒
+    main	 end
+ */

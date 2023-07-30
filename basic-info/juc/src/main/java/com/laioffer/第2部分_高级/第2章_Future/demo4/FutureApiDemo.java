@@ -16,9 +16,10 @@ public class FutureApiDemo {
     Callable<String> call = new Callable<String>() {
       @Override
       public String call() {
-        System.out.println(Thread.currentThread().getName() + "\t [1]");
+        System.out.println(Thread.currentThread().getName() + "\t 进入耗时任务... \t\t" + System.currentTimeMillis());
+        // 暂停几毫秒线程
         try {
-          TimeUnit.SECONDS.sleep(5);
+          TimeUnit.MILLISECONDS.sleep(5000);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
@@ -29,11 +30,17 @@ public class FutureApiDemo {
     FutureTask<String> ft = new FutureTask<>(call);
     Thread t1 = new Thread(ft, "t1");
     t1.start();
-    System.out.println(Thread.currentThread().getName() + "\t 忙其它任务了");
-    // System.out.println(ft.get());
-    System.out.println(ft.get(3, TimeUnit.SECONDS));
+
+    System.out.println(Thread.currentThread().getName() + "\t 忙其它任务了 \t\t" + System.currentTimeMillis());
+
+    System.out.println(ft.get() + "\t\t" + System.currentTimeMillis());
   }
 }
 
-// Future # get()缺点:
-// 一旦调用get()方法拿结果，如果计算没有完成容易导致程序阻塞
+/*
+main	 忙其它任务了 		1690697585160
+t1	 进入耗时任务... 		1690697585160
+task结束		            1690697590164
+
+一旦调用 FutureTask # get()方法拿结果，如果计算没有完成容易导致程序阻塞
+ */

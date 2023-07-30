@@ -34,3 +34,10 @@ public class FutureTaskDemo {
     System.out.println(Thread.currentThread().getName() + "\t  end");
   }
 }
+
+/*
+
+总共耗时: 1108毫秒
+main	  end
+
+ */
