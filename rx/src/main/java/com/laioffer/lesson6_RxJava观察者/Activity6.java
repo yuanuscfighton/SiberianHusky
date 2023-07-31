@@ -1,4 +1,4 @@
-package com.laioffer.lesson5_RxJava观察者;
+package com.laioffer.lesson6_RxJava观察者;
 
 import android.os.Bundle;
 
@@ -13,14 +13,10 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
- * @description RxJava的观察者模式
- * @date 2022/9/17 5:16 下午
- * <p>
- * 第1步: 分析Observer的源码
- * 第2步: 分析Observable创建过程
- * 第3步: 分析subscribe订阅过程
+ * 类的描述: RxJava的观察者模式
+ * Created by 春夏秋冬在中南 on 2023/7/30 19:37
  */
-public class Demo3Activity extends AppCompatActivity {
+public class Activity6 extends AppCompatActivity {
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,3 +80,10 @@ public class Demo3Activity extends AppCompatActivity {
         );
   }
 }
+
+/*
+  第1步: 分析Observer的源码  ← 最简单
+
+  第2步: 分析Observable创建过程
+  第3步: 分析subscribe订阅过程
+ */
