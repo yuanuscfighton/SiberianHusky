@@ -22,7 +22,7 @@ public class RxUtils {
    * U: 表示 upStream 上游
    * D: 表示 downStream 下游
    */
-  public static <UD> ObservableTransformer<UD, UD> rxud() {
+  public static <UD> ObservableTransformer<UD, UD> rxud() { // ← UD是方法的泛型
     return new ObservableTransformer<UD, UD>() {
       @Override
       public ObservableSource<UD> apply(Observable<UD> upstream) {
