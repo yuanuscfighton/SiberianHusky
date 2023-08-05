@@ -1,0 +1,66 @@
+package com.laioffer.第2部分_高级.第2章_Future.demo5_CompletableFuture;
+
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+/**
+ * 类的描述: 通过自定义线程池解决"主线程结束后，CompletableFuture默认使用的线程池立刻关闭"的问题
+ * Created by 春夏秋冬在中南 on 2023/8/5 10:18
+ */
+public class Demo257 {
+
+  public static void main(String[] args) {
+    ExecutorService threadPool1 = Executors.newFixedThreadPool(3);
+    try {
+      Supplier<Integer> supplier = new Supplier<Integer>() {
+        @Override
+        public Integer get() {
+          System.out.println(Thread.currentThread().getName() + " 进入[1]");
+          int result = ThreadLocalRandom.current().nextInt(10);
+          // 暂停几毫秒线程
+          try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+          System.out.println("1秒后出结果: " + result);
+          return result;
+        }
+      };
+      CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(supplier, threadPool1);
+      completableFuture
+          .whenComplete(new BiConsumer<Integer, Throwable>() {
+            @Override
+            public void accept(Integer val, Throwable throwable) {
+              if (throwable == null) {
+                System.out.println("计算完成，更新系统UpdateValue: " + val);
+              }
+            }
+          })
+          .exceptionally(new Function<Throwable, Integer>() {
+            @Override
+            public Integer apply(Throwable throwable) {
+              throwable.printStackTrace();
+              System.out.println("异常情况: " + throwable.getCause() + "\t" + throwable.getMessage());
+              return null;
+            }
+          });
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      threadPool1.shutdown();
+    }
+  }
+}
+
+/*
+  pool-1-thread-1 进入[1]
+  1秒后出结果: 3
+  计算完成，更新系统UpdateValue: 3
+ */
