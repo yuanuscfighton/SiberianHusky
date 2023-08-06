@@ -10,7 +10,7 @@
     <!-- 确定view跟哪个数据绑定 -->
     <variable
       name="viewModel"
-      type="com.laioffer.my_mvx.demo4_mvvm.viewmodel.GameViewModel" />
+      type="com.laioffer.demo4_mvvm.viewmodel.GameViewModel" />
   </data>
 
   <LinearLayout
