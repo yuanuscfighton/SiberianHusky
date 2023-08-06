@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo1_8锁案例;
+package com.laioffer.第2部分_高级.第3章_锁.demo1_8锁案例;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Demo5 {
   public static void main(String[] args) {
     Phone5 phone5 = new Phone5();
+
     new Thread(() -> {
       phone5.sendEmail();
     }, "a").start();
@@ -42,7 +43,14 @@ class Phone5 {
   }
 }
 
-// send Email → send SMS
-// 对于普通同步方法，锁的是当前实例对象，通常指this，具体的一部部手机，所有的普通同步方法用的都是同一把锁，即，实例对象本身
-// 对于静态同步方法，锁的是当前类的Class对象，如Phone.Class唯一的一个模版
-// 对于同步方法块，锁的是synchronized括号内的对象
+/*
+打印结果: send Email → send SMS
+
+分析:
+1. 对于普通同步方法，锁的是当前实例对象，通常指this，具体的一部部手机，所有的普通同步方法用的都是同一把锁，
+      即，实例对象本身(phone = new Phone()，new出来的东西)
+
+2. 对于静态同步方法，锁的是当前类的Class对象，即，Phone.Class唯一的一个模版
+
+3. 对于同步方法块，锁的是synchronized括号内的对象
+ */

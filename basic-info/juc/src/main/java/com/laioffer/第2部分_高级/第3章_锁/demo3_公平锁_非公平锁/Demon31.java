@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo3_公平锁_非公平锁;
+package com.laioffer.第2部分_高级.第3章_锁.demo3_公平锁_非公平锁;
 
 import java.util.concurrent.locks.ReentrantLock;
 

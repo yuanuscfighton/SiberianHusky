@@ -1,18 +1,18 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo1_8锁案例;
+package com.laioffer.第2部分_高级.第3章_锁.demo1_8锁案例;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * 类的描述: 案例8: 有1个静态同步方法，有1个普通同步方法，有2部手机，先打印发邮件还是发短信？
- * Created by 春夏秋冬在中南 on 2023/7/9 21:22
+ * 类的描述: 案例6: 有2个静态同步方法，有2部手机，先打印发邮件还是发短信？
+ * Created by 春夏秋冬在中南 on 2023/7/9 21:16
  */
-public class Demo8 {
+public class Demo6 {
   public static void main(String[] args) {
-    Phone8 phone81 = new Phone8();
-    Phone8 phone82 = new Phone8();
+    Phone6 phone61 = new Phone6();
+    Phone6 phone62 = new Phone6();
 
     new Thread(() -> {
-      phone81.sendEmail();
+      phone61.sendEmail();
     }, "a").start();
 
     // 暂停几毫秒线程
@@ -22,11 +22,13 @@ public class Demo8 {
       e.printStackTrace();
     }
 
-    new Thread(phone82::sendSMS, "b").start();
+    new Thread(() -> {
+      phone62.sendSMS();
+    }, "b").start();
   }
 }
 
-class Phone8 {
+class Phone6 {
   public static synchronized void sendEmail() {
     // 暂停几毫秒线程
     try {
@@ -37,9 +39,11 @@ class Phone8 {
     System.out.println("send Email");
   }
 
-  public synchronized void sendSMS() {
+  public static synchronized void sendSMS() {
     System.out.println("send SMS");
   }
 }
 
-// send SMS → send Email
+/*
+打印结果: send Email → send SMS
+ */

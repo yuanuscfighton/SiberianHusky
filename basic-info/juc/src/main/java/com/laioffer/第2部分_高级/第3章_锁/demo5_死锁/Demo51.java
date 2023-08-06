@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo5_死锁;
+package com.laioffer.第2部分_高级.第3章_锁.demo5_死锁;
 
 import java.util.concurrent.TimeUnit;
 

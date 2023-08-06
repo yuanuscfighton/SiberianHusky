@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo2_从字节码角度分析synchronized;
+package com.laioffer.第2部分_高级.第3章_锁.demo2_从字节码角度分析synchronized;
 
 /**
  * 类的描述: 从字节码角度分析「静态同步方法」

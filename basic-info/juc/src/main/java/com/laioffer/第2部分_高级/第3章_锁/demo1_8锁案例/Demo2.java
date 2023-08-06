@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo1_8锁案例;
+package com.laioffer.第2部分_高级.第3章_锁.demo1_8锁案例;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,4 +39,7 @@ class Phone2 {
   }
 }
 
-// 先打印"邮件"，再打印"短信"
+/*
+打印结果: send Email → send SMS
+
+ */

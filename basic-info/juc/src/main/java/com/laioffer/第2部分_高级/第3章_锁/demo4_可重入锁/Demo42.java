@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo4_可重入锁;
+package com.laioffer.第2部分_高级.第3章_锁.demo4_可重入锁;
 
 /**
  * 类的描述: 可重入锁: 同步方法
