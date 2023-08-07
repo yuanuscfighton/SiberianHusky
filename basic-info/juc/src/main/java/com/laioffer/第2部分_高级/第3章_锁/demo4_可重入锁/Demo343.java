@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 类的描述: 可重入锁: ReentrantLock
  * Created by 春夏秋冬在中南 on 2023/7/18 23:19
  */
-public class Demo43 {
+public class Demo343 {
 
   private static ReentrantLock lock = new ReentrantLock();
 
