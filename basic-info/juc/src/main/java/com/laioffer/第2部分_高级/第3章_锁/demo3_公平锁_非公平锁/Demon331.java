@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_锁.demo3_公平锁_非公平锁;
+package com.laioffer.第2部分_高级.第3章_锁.demo3_公平锁_非公平锁;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 类的描述: 模拟3个售票员卖完50张票
  * Created by 春夏秋冬在中南 on 2023/7/15 17:43
  */
-public class Demon31 {
+public class Demon331 {
   public static void main(String[] args) {
     Ticket ticket = new Ticket();
     new Thread(

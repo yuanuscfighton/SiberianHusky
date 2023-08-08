@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    configs.each {_, value ->
+    configs.each { _, value ->
         implementation value
     }
 }
