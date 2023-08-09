@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第5章_线程中断.demo1_interrupt;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo1_interrupt;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -7,8 +7,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 类的描述: 如何停止中断运行中的线程？通过AtomicBoolean
  * Created by 春夏秋冬在中南 on 2023/7/20 23:42
  */
-public class Demo52 {
+public class Demo412 {
 
+  // 原子bool型变量
   static AtomicBoolean sAtomicBoolean = new AtomicBoolean(false);
 
   public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Demo52 {
     new Thread(() -> {
       while (true) {
         if (sAtomicBoolean.get()) {
-          System.out.println(Thread.currentThread().getName() + "\t sAtomicBoolean 被修改为true，程序停止运行");
+          System.out.println(Thread.currentThread().getName() + "\t \"sAtomicBoolean\" 被修改为true，程序停止运行");
           break;
         }
         System.out.println("线程1，线程运行中");
@@ -35,3 +36,19 @@ public class Demo52 {
     }, "线程2").start();
   }
 }
+
+/*
+线程1，线程运行中
+线程1，线程运行中
+... ... ... ...
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1，线程运行中
+线程1	 "sAtomicBoolean" 被修改为true，程序停止运行
+ */

@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第5章_线程中断.demo3_await_signal;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo3_await_signal;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;

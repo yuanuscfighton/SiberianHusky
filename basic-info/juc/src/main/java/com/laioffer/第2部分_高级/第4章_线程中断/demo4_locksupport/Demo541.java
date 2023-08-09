@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第5章_线程中断.demo4_locksupport;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo4_locksupport;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
