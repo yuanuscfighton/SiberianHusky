@@ -95,10 +95,20 @@ public class Demo1Activity extends AppCompatActivity {
   @SuppressWarnings("ResultOfMethodCallIgnored")
   @SuppressLint("CheckResult")
   private void startFlipperAnimOnce() {
-
-    startNormalFlipperAnim();
     Observable.timer(ANIM_DISPLAY_DURATION_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-        .observeOn(AndroidSchedulers.mainThread())
+        .doOnNext(new Consumer<Long>() {
+          @Override
+          public void accept(Long ignore) {
+            Log.e("测试", "doOnNext");
+          }
+        })
+        .doOnSubscribe(new Consumer<Disposable>() {
+          @Override
+          public void accept(Disposable ignore) {
+            Log.e("测试", "doOnSubscribe");
+            startNormalFlipperAnim();
+          }
+        })
         .subscribe(new Consumer<Object>() {
           @Override
           public void accept(Object o) {
