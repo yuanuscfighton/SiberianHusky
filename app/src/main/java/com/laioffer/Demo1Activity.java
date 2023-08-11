@@ -27,7 +27,6 @@ import io.reactivex.rxjava3.functions.Consumer;
 
 public class Demo1Activity extends AppCompatActivity {
 
-  private static final Object TOKEN = new Object();
   private static final int ANIM_DURATION_150_MS = 150;
   private static final int ANIM_DURATION_250_MS = 250;
   // icon2停留时间
@@ -98,12 +97,12 @@ public class Demo1Activity extends AppCompatActivity {
   private void startFlipperAnimOnce() {
 
     startNormalFlipperAnim();
-    Observable.just(TOKEN)
-        .delaySubscription(ANIM_DISPLAY_DURATION_MS, TimeUnit.MILLISECONDS)
+    Observable.timer(ANIM_DISPLAY_DURATION_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new Consumer<Object>() {
           @Override
           public void accept(Object o) {
+            Log.e("测试", "开始反向动画");
             startReverseFlipperAnim();
           }
         });
