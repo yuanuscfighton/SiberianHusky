@@ -25,7 +25,6 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 
-// https://blog.csdn.net/qq_23049111/article/details/122940779
 public class Demo1Activity extends AppCompatActivity {
 
   private static final Object TOKEN = new Object();
@@ -65,7 +64,11 @@ public class Demo1Activity extends AppCompatActivity {
 
   private void startFlipperAnim() {
 
-    mAnimDisposable = Observable.interval(0, ANIM_DISPLAY_INTERVAL_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+    mAnimDisposable = Observable.interval(
+            0, ANIM_DISPLAY_INTERVAL_MS,
+            TimeUnit.MILLISECONDS,
+            AndroidSchedulers.mainThread())
+        // take操作符的介绍: https://blog.csdn.net/qq_23049111/article/details/122940779
         .take(ANIM_DISPLAY_MAX_DURATION_MS, TimeUnit.MILLISECONDS)
         .subscribe(
             new Consumer<Object>() {
