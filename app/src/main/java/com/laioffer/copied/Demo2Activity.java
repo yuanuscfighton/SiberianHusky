@@ -1,4 +1,4 @@
-package com.laioffer;
+package com.laioffer.copied;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,31 +20,24 @@ import com.laioffer.tools.AnimUtils;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 
-// https://blog.csdn.net/qq_23049111/article/details/122940779
-public class Demo1Activity extends AppCompatActivity {
+public class Demo2Activity extends AppCompatActivity {
 
-  private static final Object TOKEN = new Object();
   private static final int ANIM_DURATION_150_MS = 150;
   private static final int ANIM_DURATION_250_MS = 250;
-  // icon2停留时间
-  private static final int ANIM_DISPLAY_DURATION_MS = 5_000;
+  // 轮播5秒
+  private static final int ANIM_REPEAT_COUNT = 12;
   // 动画每间隔10秒播放1次
   private static final int ANIM_DISPLAY_INTERVAL_MS = 10_000;
   // 动画最多播放30分钟
   private static final int ANIM_DISPLAY_MAX_DURATION_MS = 30 * 60 * 1000;
 
-  private Disposable mAnimDisposable;
-
   private ImageView mIcon1;
   private ImageView mIcon2;
 
-  // icon1 --> icon2 动画
+  private int mAnimRepeatCount = 0;
   private AnimatorSet mFlipperAnimatorSet;
-  // icon2 --> icon1 动画
   private AnimatorSet mFlipperReverseAnimatorSet;
 
   @Override
@@ -63,55 +55,28 @@ public class Demo1Activity extends AppCompatActivity {
     mIcon2.setAlpha(0f);
   }
 
-  private void startFlipperAnim() {
-
-    mAnimDisposable = Observable.interval(0, ANIM_DISPLAY_INTERVAL_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-        .take(ANIM_DISPLAY_MAX_DURATION_MS, TimeUnit.MILLISECONDS)
-        .subscribe(
-            new Consumer<Object>() {
-              @Override
-              public void accept(Object o) {
-                Log.e("测试", "做动画");
-                startFlipperAnimOnce();
-              }
-            },
-            new Consumer<Throwable>() {
-              @Override
-              public void accept(Throwable throwable) {
-                Log.e("测试", "error: " + throwable);
-              }
-            },
-            new Action() {
-              @Override
-              public void run() {
-                Log.e("测试", "onComplete");
-                mAnimDisposable.dispose();
-              }
-            });
-  }
-
-  @SuppressWarnings("ResultOfMethodCallIgnored")
   @SuppressLint("CheckResult")
-  private void startFlipperAnimOnce() {
-
-    startNormalFlipperAnim();
-    Observable.just(TOKEN)
-        .delaySubscription(ANIM_DISPLAY_DURATION_MS, TimeUnit.MILLISECONDS)
+  @SuppressWarnings("ResultOfMethodCallIgnored")
+  private void startFlipperAnim() {
+    startFlipperAnimOnce();
+    Observable.interval(ANIM_DISPLAY_INTERVAL_MS, TimeUnit.MILLISECONDS)
+        .timeout(ANIM_DISPLAY_MAX_DURATION_MS, TimeUnit.MILLISECONDS)
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(new Consumer<Object>() {
+        .subscribe(new Consumer<Long>() {
           @Override
-          public void accept(Object o) {
-            startReverseFlipperAnim();
+          public void accept(Long ignore) {
+            Log.e("测试", "startFlipperAnimOnce()");
+            startFlipperAnimOnce();
           }
         });
   }
 
-  /**
-   * icon1 --> icon2 动画
-   */
-  private void startNormalFlipperAnim() {
+  private void startFlipperAnimOnce() {
+    mAnimRepeatCount = 0;
     AnimUtils.stopAnimatorSafely(mFlipperAnimatorSet);
+    AnimUtils.stopAnimatorSafely(mFlipperReverseAnimatorSet);
 
+    ////////// 正向播放 //////////
     // icon1的缩小动画
     ObjectAnimator smallerScaleXAnimator = ObjectAnimator.ofFloat(mIcon1, View.SCALE_X, 1f, 0f);
     smallerScaleXAnimator.setInterpolator(new LinearInterpolator());
@@ -132,19 +97,7 @@ public class Demo1Activity extends AppCompatActivity {
     alphaInAnimator.setInterpolator(new LinearInterpolator());
     alphaInAnimator.setDuration(ANIM_DURATION_150_MS);
 
-    mFlipperAnimatorSet = new AnimatorSet();
-    mFlipperAnimatorSet.play(smallerScaleXAnimator)
-        .with(alphaOutAnimator)
-        .with(alphaInAnimator)
-        .before(biggerScaleXAnimator);
-
-    mFlipperAnimatorSet.start();
-  }
-
-  /**
-   * icon2 --> icon1 动画
-   */
-  private void startReverseFlipperAnim() {
+    ////////// 反向播放 //////////
     // icon2的缩小动画
     ObjectAnimator smallerScaleXReverseAnimator = ObjectAnimator.ofFloat(mIcon2, View.SCALE_X, 1f, 0f);
     smallerScaleXReverseAnimator.setInterpolator(new LinearInterpolator());
@@ -165,12 +118,39 @@ public class Demo1Activity extends AppCompatActivity {
     alphaInReverseAnimator.setInterpolator(new LinearInterpolator());
     alphaInReverseAnimator.setDuration(ANIM_DURATION_150_MS);
 
+    mFlipperAnimatorSet = new AnimatorSet();
+    mFlipperAnimatorSet.play(smallerScaleXAnimator)
+        .with(alphaOutAnimator)
+        .with(alphaInAnimator)
+        .before(biggerScaleXAnimator);
+
     mFlipperReverseAnimatorSet = new AnimatorSet();
     mFlipperReverseAnimatorSet.play(smallerScaleXReverseAnimator)
         .with(alphaOutReverseAnimator)
         .with(alphaInReverseAnimator)
         .before(biggerScaleXReverseAnimator);
+    mFlipperAnimatorSet.addListener(new AnimatorListenerAdapter() {
+      @Override
+      public void onAnimationEnd(Animator animation) {
+        Log.e("测试", "剩余次数:" + mAnimRepeatCount);
+        if (mAnimRepeatCount < ANIM_REPEAT_COUNT) {
+          mAnimRepeatCount++;
+          mFlipperReverseAnimatorSet.start();
+        } else {
+          mIcon1.setScaleX(1f);
+          mIcon1.setAlpha(1f);
+          mIcon2.setScaleX(0f);
+          mIcon2.setAlpha(0f);
+        }
+      }
+    });
+    mFlipperAnimatorSet.start();
 
-    mFlipperReverseAnimatorSet.start();
+    mFlipperReverseAnimatorSet.addListener(new AnimatorListenerAdapter() {
+      @Override
+      public void onAnimationEnd(Animator animation) {
+        mFlipperAnimatorSet.start();
+      }
+    });
   }
 }

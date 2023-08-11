@@ -1,9 +1,7 @@
-package com.laioffer;
+package com.laioffer.copied;
 
 import java.util.concurrent.TimeUnit;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
@@ -12,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,12 +18,9 @@ import com.laioffer.tools.AnimUtils;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 
-// https://blog.csdn.net/qq_23049111/article/details/122940779
-public class Demo1Activity extends AppCompatActivity {
+public class Demo3Activity extends AppCompatActivity {
 
   private static final Object TOKEN = new Object();
   private static final int ANIM_DURATION_150_MS = 150;
@@ -34,11 +28,9 @@ public class Demo1Activity extends AppCompatActivity {
   // icon2停留时间
   private static final int ANIM_DISPLAY_DURATION_MS = 5_000;
   // 动画每间隔10秒播放1次
-  private static final int ANIM_DISPLAY_INTERVAL_MS = 10_000;
+  private static final int ANIM_DISPLAY_INTERVAL_MS = 5_000;
   // 动画最多播放30分钟
-  private static final int ANIM_DISPLAY_MAX_DURATION_MS = 30 * 60 * 1000;
-
-  private Disposable mAnimDisposable;
+  private static final int ANIM_DISPLAY_MAX_DURATION_MS = 1 * 60 * 1000 / 4;
 
   private ImageView mIcon1;
   private ImageView mIcon2;
@@ -63,37 +55,30 @@ public class Demo1Activity extends AppCompatActivity {
     mIcon2.setAlpha(0f);
   }
 
+  @SuppressLint("CheckResult")
+  @SuppressWarnings("ResultOfMethodCallIgnored")
   private void startFlipperAnim() {
+    startFlipperAnimOnce();
 
-    mAnimDisposable = Observable.interval(0, ANIM_DISPLAY_INTERVAL_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
-        .take(ANIM_DISPLAY_MAX_DURATION_MS, TimeUnit.MILLISECONDS)
-        .subscribe(
-            new Consumer<Object>() {
-              @Override
-              public void accept(Object o) {
-                Log.e("测试", "做动画");
-                startFlipperAnimOnce();
-              }
-            },
-            new Consumer<Throwable>() {
-              @Override
-              public void accept(Throwable throwable) {
-                Log.e("测试", "error: " + throwable);
-              }
-            },
-            new Action() {
-              @Override
-              public void run() {
-                Log.e("测试", "onComplete");
-                mAnimDisposable.dispose();
-              }
-            });
+    Observable.interval(ANIM_DISPLAY_INTERVAL_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+        .timeout(ANIM_DISPLAY_MAX_DURATION_MS, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+        .subscribe(new Consumer<Long>() {
+          @Override
+          public void accept(Long ignore) {
+            Log.e("测试", "startFlipperAnimOnce");
+            startFlipperAnimOnce();
+          }
+        }, new Consumer<Throwable>() {
+          @Override
+          public void accept(Throwable throwable) {
+            Log.e("测试", "timeout");
+          }
+        });
   }
 
   @SuppressWarnings("ResultOfMethodCallIgnored")
   @SuppressLint("CheckResult")
   private void startFlipperAnimOnce() {
-
     startNormalFlipperAnim();
     Observable.just(TOKEN)
         .delaySubscription(ANIM_DISPLAY_DURATION_MS, TimeUnit.MILLISECONDS)
@@ -101,6 +86,7 @@ public class Demo1Activity extends AppCompatActivity {
         .subscribe(new Consumer<Object>() {
           @Override
           public void accept(Object o) {
+            // Log.e("测试", "startReverseFlipperAnim");
             startReverseFlipperAnim();
           }
         });
