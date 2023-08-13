@@ -54,7 +54,10 @@ ext {
             // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata-ktx
             "lifecycle-livedata"         : "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1",
             // https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
-            "lifecycle-databinding"      : "androidx.databinding:databinding-runtime:8.1.0"
+            "lifecycle-databinding"      : "androidx.databinding:databinding-runtime:8.1.0",
+
+            // dagger2: https://github.com/google/dagger
+            "dagger2"                    : 'com.google.dagger:dagger:2.47'
     ]
 
 }
