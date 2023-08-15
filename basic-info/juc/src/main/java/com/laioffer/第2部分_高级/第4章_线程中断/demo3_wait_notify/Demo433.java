@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_线程中断.demo2_wait_notify;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo3_wait_notify;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,11 +6,12 @@ import java.util.concurrent.TimeUnit;
  * 类的描述: Object中的wait和notify异常情况2
  * Created by 春夏秋冬在中南 on 2023/7/25 07:07
  */
-public class Demo523 {
+public class Demo433 {
 
   public static void main(String[] args) {
     Object objectLock = new Object();
 
+    // 先notify，再wait
     new Thread(() -> {
       synchronized (objectLock) {
         objectLock.notify();
@@ -45,5 +46,7 @@ public class Demo523 {
 
 线程2	 通知
 线程1	 [1]
+... ... ...
+... ... ...
 
  */

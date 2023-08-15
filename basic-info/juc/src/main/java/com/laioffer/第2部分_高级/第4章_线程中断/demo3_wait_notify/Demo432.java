@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_线程中断.demo2_wait_notify;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo3_wait_notify;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * 类的描述: Object中的wait和notify的异常情况1
  * Created by 春夏秋冬在中南 on 2023/7/25 07:04
  */
-public class Demo522 {
+public class Demo432 {
 
   public static void main(String[] args) {
     Object objectLock = new Object();
@@ -43,11 +43,13 @@ public class Demo522 {
 java.lang.IllegalMonitorStateException
 	at java.base/java.lang.Object.wait(Native Method)
 	at java.base/java.lang.Object.wait(Object.java:328)
-	at com.laioffer.第2部分_高级.第5章_线程中断.demo2_等待与唤醒.Demo522.lambda$main$0(Demo522.java:17)
+	at com.laioffer.第2部分_高级.第4章_线程中断.demo3_wait_notify.Demo432.lambda$main$0(Demo432.java:17)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 Exception in thread "线程2" java.lang.IllegalMonitorStateException
 	at java.base/java.lang.Object.notify(Native Method)
-	at com.laioffer.第2部分_高级.第5章_线程中断.demo2_等待与唤醒.Demo522.lambda$main$1(Demo522.java:32)
+	at com.laioffer.第2部分_高级.第4章_线程中断.demo3_wait_notify.Demo432.lambda$main$1(Demo432.java:32)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
+小结：
+    wait和notify需要包在synchronized块中使用
  */

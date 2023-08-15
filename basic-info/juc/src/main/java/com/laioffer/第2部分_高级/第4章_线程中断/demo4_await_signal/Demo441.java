@@ -1,4 +1,4 @@
-package com.laioffer.第2部分_高级.第4章_线程中断.demo3_await_signal;
+package com.laioffer.第2部分_高级.第4章_线程中断.demo4_await_signal;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
@@ -9,11 +9,12 @@ import java.util.concurrent.locks.ReentrantLock;
  * 类的描述: Lock中的await和signal方法
  * Created by 春夏秋冬在中南 on 2023/7/25 07:19
  */
-public class Demo531 {
+public class Demo441 {
 
   public static void main(String[] args) {
     Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
+
     new Thread(() -> {
       lock.lock();
       try {
@@ -25,7 +26,7 @@ public class Demo531 {
       } finally {
         lock.unlock();
       }
-    }, "[线程531 线程1]").start();
+    }, "线程1").start();
 
     // 暂停几毫秒线程
     try {
@@ -42,6 +43,14 @@ public class Demo531 {
       } finally {
         lock.unlock();
       }
-    }, "[线程531 线程2]").start();
+    }, "线程2").start();
   }
 }
+
+/*
+线程1	 [1]
+线程2	 发出通知
+线程1	 被唤醒
+
+
+ */
