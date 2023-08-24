@@ -1,4 +1,4 @@
-package com.laioffer.l6_RxJava观察者;
+package com.laioffer.l6_Rx设计模式;
 
 import android.os.Bundle;
 
