@@ -1,10 +1,10 @@
-package com.laioffer.第2部分_高级.第8章_CAS.demo1_没有使用CAS;
+package com.laioffer.第2部分_高级.第7章_CAS.demo1_没有使用CAS;
 
 /**
  * 类的描述: 多线程环境下不使用原子类保证线程安全
  * Created by 春夏秋冬在中南 on 2023/7/29 10:08
  */
-public class Demo81 {
+public class Demo71 {
 
   // 变量加volatile修饰，保证读取的时候，读到的是最新版本
   volatile int number = 0;
