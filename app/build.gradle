@@ -87,4 +87,7 @@ dependencies {
     // dagger2: https://github.com/google/dagger
     implementation 'com.google.dagger:dagger:2.47'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.47'
+    // Hilt dependencies
+    implementation 'com.google.dagger:hilt-android:2.44.2'
+    annotationProcessor 'com.google.dagger:hilt-compiler:2.44.2'
 }
