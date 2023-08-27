@@ -1,4 +1,4 @@
-package com.laioffer.lesson.手写dagger;
+package com.laioffer.lesson.使用手写dagger;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -6,13 +6,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.laioffer.R;
-
-import javax.inject.Inject;
-
+import com.laioffer.lesson.使用手写dagger.模拟apt生成的代码.DaggerComputerComponent;
+import com.laioffer.lesson.手写dagger.annotation.Inject;
 
 /**
- * @description 注入目标
- * @date 2022/10/6 3:19 下午
+ * 类的描述: 注入目标
  */
 public class MainActivity extends AppCompatActivity {
 

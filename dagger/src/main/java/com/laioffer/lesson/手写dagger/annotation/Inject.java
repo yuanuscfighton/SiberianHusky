@@ -1,4 +1,4 @@
-package com.laioffer.lesson.手写dagger2.annotation;
+package com.laioffer.lesson.手写dagger.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,8 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @description
- * @date 2022/11/29 9:27 PM
+ * 用户注入对象角色的注解
  */
 @Target({ElementType.CONSTRUCTOR, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

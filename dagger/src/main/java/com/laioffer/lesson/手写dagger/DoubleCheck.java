@@ -1,14 +1,15 @@
-package com.laioffer.lesson.手写dagger2;
+package com.laioffer.lesson.手写dagger;
 
 /**
- * 单例处理的类
+ * 类的描述: @Singleton 单例，对象初始化一次
  */
 public final class DoubleCheck<T> implements Provider<T> {
 
   // 为了单例的检查而已
   private static final Object UNINITIALIZED = new Object();
 
-  private volatile Provider<T> provider; // 最上层实例化对象的 接口
+  // 最上层实例化对象的 接口
+  private volatile Provider<T> provider;
   private volatile Object instance = UNINITIALIZED;
 
   private DoubleCheck(Provider<T> provider) {

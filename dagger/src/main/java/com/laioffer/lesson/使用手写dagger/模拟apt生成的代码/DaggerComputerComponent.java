@@ -1,19 +1,15 @@
-package com.laioffer.lesson.手写dagger.apt_create_dagger2;
+package com.laioffer.lesson.使用手写dagger.模拟apt生成的代码;
 
-
-import com.laioffer.lesson.手写dagger.Computer;
-import com.laioffer.lesson.手写dagger.ComputerComponent;
-import com.laioffer.lesson.手写dagger.ComputerModule;
-import com.laioffer.lesson.手写dagger.MainActivity;
-import com.laioffer.lesson.手写dagger2.MembersInjector;
-
-import javax.inject.Provider;
-
-import dagger.internal.Preconditions;
+import com.laioffer.lesson.使用手写dagger.Computer;
+import com.laioffer.lesson.使用手写dagger.ComputerComponent;
+import com.laioffer.lesson.使用手写dagger.ComputerModule;
+import com.laioffer.lesson.使用手写dagger.MainActivity;
+import com.laioffer.lesson.手写dagger.MembersInjector;
+import com.laioffer.lesson.手写dagger.Preconditions;
+import com.laioffer.lesson.手写dagger.Provider;
 
 /**
- * @description 第4个注解 Component
- * @date 2022/10/6 3:21 下午
+ * 类的描述: 第4个注解 Component
  */
 public class DaggerComputerComponent implements ComputerComponent {
 
@@ -27,8 +23,8 @@ public class DaggerComputerComponent implements ComputerComponent {
   private MembersInjector<MainActivity> mainActivityMembersInjector;
 
   private void initialize(final Builder builder) {
-    // this.providerComputerProvider =
-    //     ComputerModule_ProviderComputerFactory.create(builder.computerModule);
+    this.providerComputerProvider =
+        ComputerModule_ProviderComputerFactory.create(builder.computerModule);
     this.mainActivityMembersInjector = MainActivity_MembersInjector.create(providerComputerProvider);
   }
 
@@ -39,10 +35,11 @@ public class DaggerComputerComponent implements ComputerComponent {
 
   public static final class Builder {
 
-    // 定义我们的包裹 是靠我们的第四个注解
+    // 定义我们的包裹，依靠 @Component注解
     ComputerModule computerModule;
 
-    private Builder() {}
+    private Builder() {
+    }
 
     public ComputerComponent build() {
       if (computerModule == null) {
@@ -54,7 +51,7 @@ public class DaggerComputerComponent implements ComputerComponent {
 
     /**
      * @deprecated This module is declared, but an instance is not used in the component. This
-     *             method is a no-op. For more, see https://google.github.io/dagger/unused-modules.
+     * method is a no-op. For more, see <a href="https://google.github.io/dagger/unused-modules">...</a>.
      */
     @Deprecated
     public Builder computerModule(ComputerModule computerModule) {

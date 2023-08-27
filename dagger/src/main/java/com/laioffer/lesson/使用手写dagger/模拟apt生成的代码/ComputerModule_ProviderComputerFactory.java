@@ -1,9 +1,9 @@
-package com.laioffer.lesson.手写dagger.apt_create_dagger2;
+package com.laioffer.lesson.使用手写dagger.模拟apt生成的代码;
 
 
-import com.laioffer.lesson.手写dagger.Computer;
-import com.laioffer.lesson.手写dagger.ComputerModule;
-import com.laioffer.lesson.手写dagger2.Factory;
+import com.laioffer.lesson.使用手写dagger.Computer;
+import com.laioffer.lesson.使用手写dagger.ComputerModule;
+import com.laioffer.lesson.手写dagger.Factory;
 
 import dagger.internal.Preconditions;
 
