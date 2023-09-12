@@ -1,8 +1,8 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo2_mvp
+package com.laioffer.lesson1_lifecycle.demo2_mvp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.laioffer.my_mvx.R
+import com.laioffer.mvx.R
 
 /**
  * @description: 版本2: MVP，P层监听生命周期函数

@@ -1,8 +1,8 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo3_lifecycle
+package com.laioffer.lesson1_lifecycle.demo3_lifecycle
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.laioffer.my_mvx.R
+import com.laioffer.mvx.R
 
 /**
  * @description: 使用LifecycleOwner和LifecycleObserver实现

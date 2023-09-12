@@ -1,15 +1,17 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo1
+package com.laioffer.lesson1_lifecycle.demo1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.laioffer.my_mvx.R
+import com.laioffer.mvx.R
+import com.laioffer.my_mvx.lesson1_lifecycle.demo1.MyListener
 
 /**
- * @description: 版本1: 监听器监听生命周期
- * @date: 2022/9/19 7:52 上午
+ * 类的描述: 版本1: 监听器监听生命周期
+ * Created by 春夏秋冬在中南 on 2023/9/12 07:41
  */
 class Demo1Activity : AppCompatActivity() {
 
+  /* 如果没有Lifecycle，就需要自定义监听器，监听生命周期变化 */
   private var myListener: MyListener? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {

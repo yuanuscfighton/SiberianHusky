@@ -1,8 +1,8 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo4
+package com.laioffer.lesson1_lifecycle.demo4
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.laioffer.my_mvx.R
+import com.laioffer.mvx.R
 
 /**
  * @description: 被观察者 Observable
@@ -14,6 +14,6 @@ class Demo4Activity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.empty_layout)
 
-    lifecycle.addObserver(MyLocationListener())  
+    lifecycle.addObserver(MyLocationListener())
   }
 }

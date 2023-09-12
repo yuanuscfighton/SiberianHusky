@@ -1,4 +1,4 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo4
+package com.laioffer.lesson1_lifecycle.demo4
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle

@@ -1,4 +1,4 @@
-package com.laioffer.my_mvx.lesson1_lifecycle.demo3_lifecycle
+package com.laioffer.lesson1_lifecycle.demo3_lifecycle
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle
@@ -6,8 +6,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
- * @description:
- * @date: 2022/9/21 8:05 上午
+ * 类的描述: 观察者 -- 眼睛
+ * Created by 春夏秋冬在中南 on 2023/9/12 07:48
  */
 class MyObserver : LifecycleObserver {
 
