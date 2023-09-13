@@ -1,4 +1,4 @@
-package com.laioffer.第1部分_基础.第1章_复习;
+package com.laioffer.第1部分_基础.第1章_Lock接口;
 
 /**
  * 类的描述: 3个售票员，卖30张票
