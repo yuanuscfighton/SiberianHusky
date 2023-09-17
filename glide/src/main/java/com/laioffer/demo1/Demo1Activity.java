@@ -23,20 +23,26 @@ public class Demo1Activity extends AppCompatActivity {
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    init();
-  }
-
-  private void init() {
     btn = (Button)findViewById(R.id.btn_load);
-
     img = (ImageView)findViewById(R.id.img);
 
-    btn.setOnClickListener(v -> btnLoad());
+    btn.setOnClickListener(v -> loadPic());
+
+    // 子线程
+    new Thread(() -> Glide.with(this.getApplicationContext()).load("xxxx").into(img)).start();
   }
 
-  private void btnLoad() {
-    String url = "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg";
+  /*
+     Glide自动监听onDestroy，自动回收♻️
+   */
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    Glide.with(this).clear(img);
+  }
 
+  private void loadPic() {
+    String url = "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg";
     Glide.with(this).load(url).into(img);
   }
 }
