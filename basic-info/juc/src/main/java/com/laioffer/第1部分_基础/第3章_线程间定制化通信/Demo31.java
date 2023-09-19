@@ -9,6 +9,39 @@ import java.util.concurrent.locks.ReentrantLock;
  * Created by 春夏秋冬在中南 on 2023/9/17 21:47
  */
 public class Demo31 {
+
+  public static void main(String[] args) {
+    ShareResource shareResource = new ShareResource();
+    new Thread(() -> {
+      for (int i = 0; i < 10; i++) {
+        try {
+          shareResource.print5(i);
+        } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    }, "AA").start();
+
+    new Thread(() -> {
+      for (int i = 0; i < 10; i++) {
+        try {
+          shareResource.print10(i);
+        } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    }, "BB").start();
+
+    new Thread(() -> {
+      for (int i = 0; i < 10; i++) {
+        try {
+          shareResource.print15(i);
+        } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    }, "CC").start();
+  }
 }
 
 class ShareResource {
