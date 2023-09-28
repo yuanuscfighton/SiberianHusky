@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 类的描述: 使用Lock接口进行卖票
  * Created by 春夏秋冬在中南 on 2023/9/14 07:47
  */
-public class LSalTickets {
+public class LSaleTickets {
   public static void main(String[] args) {
 
     LTicket mLTicket = new LTicket();

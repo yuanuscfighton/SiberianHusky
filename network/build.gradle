@@ -3,8 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
-def configs = rootProject.ext.dependencies
-
 android {
     namespace 'com.laioffer'
     compileSdk rootProject.ext.compileSdkVersion
@@ -33,7 +31,34 @@ android {
 }
 
 dependencies {
-    configs.each {_, value ->
-        implementation value
-    }
+    ////////// 基本依赖 //////////
+    // kotlin依赖
+    implementation "androidx.core:core-ktx:1.10.1"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.9.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "junit:junit:4.13.2"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit-mock:2.9.0"
+
+    // RxJava
+    implementation "io.reactivex.rxjava3:rxjava:3.1.6"
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.2"
+
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+
+    // Gson
+    implementation "com.google.code.gson:gson:2.10.1"
+
+    // stetho
+    implementation "com.facebook.stetho:stetho:1.6.0"
+    implementation "com.facebook.stetho:stetho-okhttp3:1.6.0"
 }
