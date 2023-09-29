@@ -6,8 +6,8 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * @description 提供Http的对象，i.e. 将Http打包成包裹
- * @date 2022/10/04 4:03 下午
+ * 类的描述: 封装包裹，提供http对象，i.e. 将http打包成包裹📦
+ * Created by 春夏秋冬在中南 on 2023/9/29 17:15
  */
 @Module
 public class HttpModule {

@@ -9,7 +9,7 @@ import com.laioffer.lesson.demo2_使用_非单例.ui.SecondActivity;
 import dagger.Component;
 
 /**
- * 类的描述: 快递员
+ * 类的描述: 快递员：持有1个或者多个包裹，http 和 Database；持有收货地址 FirstActivity 和 SecondActivity的引用
  * Created by 春夏秋冬在中南 on 2023/8/25 07:44
  */
 

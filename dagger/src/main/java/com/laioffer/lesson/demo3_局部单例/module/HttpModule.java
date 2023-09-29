@@ -15,7 +15,7 @@ import dagger.Provides;
 @Module
 public class HttpModule {
 
-  @Singleton
+  @Singleton // ← HttpObject是单例
   @Provides
   public HttpObject provideHttpObject() {
     return new HttpObject();

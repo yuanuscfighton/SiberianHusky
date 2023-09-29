@@ -3,8 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
-def configs = rootProject.ext.dependencies
-
 android {
     namespace 'com.laioffer'
     compileSdk rootProject.ext.compileSdkVersion
@@ -35,10 +33,16 @@ android {
 }
 
 dependencies {
+    ////////// 基本依赖 //////////
+    // kotlin依赖
+    implementation "androidx.core:core-ktx:1.10.1"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.9.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "junit:junit:4.13.2"
 
-    configs.each {_, value ->
-        implementation value
-    }
-
+    // 导入dagger2 API支持，包括注解。https://github.com/google/dagger
+    implementation "com.google.dagger:dagger:2.47"
+    // 使用dagger2的注解处理器APT技术
     annotationProcessor 'com.google.dagger:dagger-compiler:2.47'
 }
