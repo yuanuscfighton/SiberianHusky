@@ -13,9 +13,9 @@ public class Demo31 {
   public static void main(String[] args) {
     ShareResource shareResource = new ShareResource();
     new Thread(() -> {
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 3; i++) {
         try {
-          shareResource.print5(i);
+          shareResource.print2(i);
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
@@ -23,9 +23,9 @@ public class Demo31 {
     }, "AA").start();
 
     new Thread(() -> {
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 3; i++) {
         try {
-          shareResource.print10(i);
+          shareResource.print3(i);
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
@@ -33,9 +33,9 @@ public class Demo31 {
     }, "BB").start();
 
     new Thread(() -> {
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 3; i++) {
         try {
-          shareResource.print15(i);
+          shareResource.print5(i);
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
@@ -56,7 +56,7 @@ class ShareResource {
   private final Condition c2 = lock.newCondition();
   private final Condition c3 = lock.newCondition();
 
-  public void print5(int loop) throws InterruptedException {
+  public void print2(int loop) throws InterruptedException {
     // 上锁
     lock.lock();
     try {
@@ -65,7 +65,7 @@ class ShareResource {
         // 等待
         c1.await();
       }
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 2; i++) {
         System.out.println(Thread.currentThread().getName() + "::" + i + "... 轮次=" + loop);
       }
 
@@ -76,10 +76,9 @@ class ShareResource {
       // 释放锁
       lock.unlock();
     }
-
   }
 
-  public void print10(int loop) throws InterruptedException {
+  public void print3(int loop) throws InterruptedException {
     // 上锁
     lock.lock();
     try {
@@ -88,7 +87,7 @@ class ShareResource {
         // 等待
         c2.await();
       }
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 3; i++) {
         System.out.println(Thread.currentThread().getName() + "::" + i + "... 轮次=" + loop);
       }
 
@@ -99,10 +98,9 @@ class ShareResource {
       // 释放锁
       lock.unlock();
     }
-
   }
 
-  public void print15(int loop) throws InterruptedException {
+  public void print5(int loop) throws InterruptedException {
     // 上锁
     lock.lock();
     try {
@@ -111,7 +109,7 @@ class ShareResource {
         // 等待
         c3.await();
       }
-      for (int i = 0; i < 15; i++) {
+      for (int i = 0; i < 5; i++) {
         System.out.println(Thread.currentThread().getName() + "::" + i + "... 轮次=" + loop);
       }
 
@@ -122,6 +120,38 @@ class ShareResource {
       // 释放锁
       lock.unlock();
     }
-
   }
 }
+
+/*
+    AA::0... 轮次=0
+    AA::1... 轮次=0
+    BB::0... 轮次=0
+    BB::1... 轮次=0
+    BB::2... 轮次=0
+    CC::0... 轮次=0
+    CC::1... 轮次=0
+    CC::2... 轮次=0
+    CC::3... 轮次=0
+    CC::4... 轮次=0
+    AA::0... 轮次=1
+    AA::1... 轮次=1
+    BB::0... 轮次=1
+    BB::1... 轮次=1
+    BB::2... 轮次=1
+    CC::0... 轮次=1
+    CC::1... 轮次=1
+    CC::2... 轮次=1
+    CC::3... 轮次=1
+    CC::4... 轮次=1
+    AA::0... 轮次=2
+    AA::1... 轮次=2
+    BB::0... 轮次=2
+    BB::1... 轮次=2
+    BB::2... 轮次=2
+    CC::0... 轮次=2
+    CC::1... 轮次=2
+    CC::2... 轮次=2
+    CC::3... 轮次=2
+    CC::4... 轮次=2
+ */
