@@ -6,3 +6,7 @@ package com.laioffer.lesson.demo1_入门;
  */
 public class Computer {
 }
+
+/*
+  第1步：商品 - 电脑
+ */
