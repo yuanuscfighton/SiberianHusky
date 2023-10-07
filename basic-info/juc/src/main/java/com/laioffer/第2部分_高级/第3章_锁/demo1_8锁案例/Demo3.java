@@ -3,7 +3,7 @@ package com.laioffer.第2部分_高级.第3章_锁.demo1_8锁案例;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 类的描述: 案例3: 增加一个普通的hello方法，先打印发邮件还是hello？
+ * 类的描述: 案例3: sendEmail方法中加入3秒延时，增加一个普通的hello方法，先打印发邮件还是hello？
  * Created by 春夏秋冬在中南 on 2023/7/9 21:00
  */
 public class Demo3 {
