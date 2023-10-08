@@ -57,7 +57,7 @@ class Phone {
 1. synchronized是悲观锁&独占锁
   加了synchronized后，有且只有一个锁可以进到资源类
 
-2. synchronized锁的是资源类
+2. synchronized锁的是资源类（当前对象）
   一个对象里面如果有多个synchronized方法，某一个时刻内，只要有一个线程去调用其中的一个synchronized方法了，
     其它的线程都只能等待。即，某一个时刻内，只能有唯一的一个线程去访问这些synchronized方法。
     锁的是当前对象this，被锁定后，其它的线程都不能进入到当前对象的其它synchronized方法

@@ -33,6 +33,7 @@ public class FirstActivity extends AppCompatActivity {
     Log.e(TAG, "obj1: " + mHttpObject1.hashCode()); // 195911031
     Log.e(TAG, "obj2: " + mHttpObject2.hashCode()); // 195911031
 
+    // 跳转到另外一个activity，mHttpObject 就不是单例了 → 局部单例
     findViewById(R.id.button1).setOnClickListener(v -> {
       startSecondActivity();
     });

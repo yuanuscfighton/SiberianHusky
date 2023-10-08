@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class WechatServerObservable implements Observable {
 
+  // 存储多个观察者
   private final List<Observer> mObserversList = new ArrayList<>();
   private String mMessage;
 

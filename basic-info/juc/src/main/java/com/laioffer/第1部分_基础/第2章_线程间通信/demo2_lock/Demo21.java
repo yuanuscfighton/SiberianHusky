@@ -25,7 +25,7 @@ public class Demo21 {
     new Thread(() -> {
       for (int i = 0; i < 10; i++) {
         try {
-          share.descrese();
+          share.decrease();
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
@@ -45,7 +45,7 @@ public class Demo21 {
     new Thread(() -> {
       for (int i = 0; i < 10; i++) {
         try {
-          share.descrese();
+          share.decrease();
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         }
@@ -69,6 +69,7 @@ class Share21 {
         mCondition.await();
       }
 
+      // 干活
       number++;
       System.out.println(Thread.currentThread().getName() + "::" + number);
 
@@ -80,7 +81,7 @@ class Share21 {
     }
   }
 
-  public void descrese() throws InterruptedException {
+  public void decrease() throws InterruptedException {
     // 上锁
     mLock.lock();
 

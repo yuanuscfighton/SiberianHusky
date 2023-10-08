@@ -33,7 +33,7 @@ public class Activity5 extends AppCompatActivity {
 
     RxJavaPlugins.setOnObservableAssembly(new Function<Observable, Observable>() {
       @Override
-      public Observable apply(Observable observable) {
+      public Observable<?> apply(Observable observable) {
 
         Log.e(TAG5, "设置hook. 监听整个项目有多少个地方使用RxJava: " + observable);
 

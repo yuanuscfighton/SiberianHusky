@@ -27,7 +27,7 @@ public class Activity6 extends AppCompatActivity {
     //    (i) 创建了ObservableCreate对象;
     //    (ii) 把我们自己定义的source传入ObservableCreate中
     Observable.create(
-            // new ObservableOnSubscribe<String>(): 自定义source
+            /* new ObservableOnSubscribe<String>() ← 自定义source */
             new ObservableOnSubscribe<String>() {
               // 这个重写的方法，在ObservableCreate#subscribeActual()中被调用source.subscribe(parent);
               // source就是我们自定义的source，parent是发射器
@@ -49,7 +49,7 @@ public class Activity6 extends AppCompatActivity {
             // 自定义观察者，实现Observer接口
             new Observer<String>() {
 
-              // onSubscribe()方法执行时机: 一订阅的时候
+              /* onSubscribe()方法执行时机: 一订阅的时候 */
               @Override
               public void onSubscribe(@NonNull Disposable d) {
                 /**
@@ -61,17 +61,19 @@ public class Activity6 extends AppCompatActivity {
                  */
               }
 
-              // 拿到上一个卡片流下来的数据
+              /* onNext：拿到上一个卡片流下来的数据 */
               @Override
               public void onNext(@NonNull String s) {
 
               }
 
+              /* onError：拿到上一个卡片流下来的错误信息 */
               @Override
               public void onError(@NonNull Throwable e) {
 
               }
 
+              /* onComplete：事件结束 */
               @Override
               public void onComplete() {
 
@@ -82,8 +84,11 @@ public class Activity6 extends AppCompatActivity {
 }
 
 /*
-  第1步: 分析Observer的源码  ← 最简单
+  分析RxJava的观察者设计模式
 
-  第2步: 分析Observable创建过程
-  第3步: 分析subscribe订阅过程
+      第1步: 分析Observer的源码  ← 最简单
+
+      第2步: 分析Observable创建过程
+
+      第3步: 分析subscribe订阅过程
  */

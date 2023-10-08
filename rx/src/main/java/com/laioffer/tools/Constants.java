@@ -8,5 +8,5 @@ public class Constants {
 
   public static final String TAG4 = "Lesson4";
 
-  public static final String TAG5 = "Lesson5";
+  public static final String TAG5 = "hook的使用";
 }
