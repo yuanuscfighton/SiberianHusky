@@ -22,7 +22,7 @@ public class Activity4 extends AppCompatActivity {
     // 创建一个微信公众号服务 ← 被观察者
     Observable server = new WechatServerObservable();
 
-    // 创建用户 ← 观察者
+    // 创建用户 ← 多个观察者
     Observer zhangsan = new User("张三");
     Observer lisi = new User("李四");
     Observer wangwu = new User("王五");
