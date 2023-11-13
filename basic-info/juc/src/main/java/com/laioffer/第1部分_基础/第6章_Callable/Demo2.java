@@ -8,22 +8,25 @@ import java.util.concurrent.FutureTask;
  * 类的描述: 实现Callable接口
  * Created by 春夏秋冬在中南 on 2023/10/9 08:19
  */
-public class Demo1 {
+public class Demo2 {
 
   public static void main(String[] args) throws ExecutionException, InterruptedException {
-    // 找一个类，既和Callable有关系，有和Runnable有关系
-    // Runnable接口有实现了FutureTask，FutureTask构造可以传递Callable
-    FutureTask<String> futureTask = new FutureTask<>(new MyThread1());
+    FutureTask<String> futureTask = new FutureTask<>(new MyThread2());
 
     new Thread(futureTask, "FutureTask").start();
 
+    while (!futureTask.isDone()) {
+      System.out.println("wait......");
+    }
+
     // 调用FutureTask的get()方法
     System.out.println(futureTask.get());
+    System.out.println(Thread.currentThread().getName() + "结束");
   }
 
 }
 
-class MyThread1 implements Callable<String> {
+class MyThread2 implements Callable<String> {
 
   @Override
   public String call() {
@@ -31,3 +34,18 @@ class MyThread1 implements Callable<String> {
     return "实现Callable接口";
   }
 }
+
+/*
+打印结束
+    wait......
+    wait......
+    wait......
+    wait......
+    wait......
+    FutureTask进入call方法
+    wait......
+    wait......
+    wait......
+    实现Callable接口  ← get之前做了很多计算
+    main结束
+ */
