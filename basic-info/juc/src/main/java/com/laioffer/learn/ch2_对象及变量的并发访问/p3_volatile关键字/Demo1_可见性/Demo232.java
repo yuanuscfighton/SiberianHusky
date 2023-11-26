@@ -2,12 +2,13 @@ package com.laioffer.learn.ch2_对象及变量的并发访问.p3_volatile关键�
 
 /**
  * 类的描述: volatile可见性 —— 使用多线程解决死循环
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/11/12 22:56
  */
 public class Demo232 {
   public static void main(String[] args) {
     PrintString2 printString2 = new PrintString2();
-    new Thread(printString2).start();
+    new Thread(printString2, "线程1").start();
 
     System.out.println("我要停止它... stopThread=" + Thread.currentThread().getName());
     printString2.setContinuePrint(false);
@@ -42,3 +43,9 @@ class PrintString2 implements Runnable {
     printStringMethod();
   }
 }
+
+/*
+  打印结果：
+    我要停止它... stopThread=main
+    Run printStringMethod... 线程名=Thread-0
+ */

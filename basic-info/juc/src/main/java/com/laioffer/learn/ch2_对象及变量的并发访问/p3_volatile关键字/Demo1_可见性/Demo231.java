@@ -2,6 +2,7 @@ package com.laioffer.learn.ch2_对象及变量的并发访问.p3_volatile关键�
 
 /**
  * 类的描述: volatile可见性 —— 单线程出现死循环
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/11/12 22:53
  */
 public class Demo231 {
