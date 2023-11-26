@@ -1,11 +1,8 @@
-package com.laioffer.l1.use4_额外操作;
+package com.laioffer.l1_RxJava使用.use3_线程;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,10 +18,10 @@ import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
- * 类的描述: 【RxJava思维编程】版本4: 增加额外操作，给图片增加水印
- * Created by 春夏秋冬在中南 on 2023/6/20 00:03
+ * 类的描述: 【RxJava思维编程】版本3: 切换线程
+ * Created by 春夏秋冬在中南 on 2023/6/20 00:02
  */
-public class RxUse4Activity extends AppCompatActivity {
+public class RxUse3Activity extends AppCompatActivity {
 
   private final static String PATH = "http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg";
 
@@ -55,17 +52,6 @@ public class RxUse4Activity extends AppCompatActivity {
           }
         })
 
-        // 绘制水印
-        .map(new Function<Bitmap, Bitmap>() {
-          @Override
-          public Bitmap apply(Bitmap bitmap) throws Exception {
-            Paint paint = new Paint();
-            paint.setTextSize(88);
-            paint.setColor(Color.RED);
-            return drawTextToBitmap(bitmap, "大家好", paint, 88, 88);
-          }
-        })
-
         .subscribeOn(Schedulers.io()) // 给上面的代码分配异步线程
         .observeOn(AndroidSchedulers.mainThread()) // 给下面的代码分配主线程
 
@@ -76,7 +62,7 @@ public class RxUse4Activity extends AppCompatActivity {
           // 一订阅，就弹出loading弹窗
           @Override
           public void onSubscribe(Disposable d) {
-            mProgressDialog = new ProgressDialog(RxUse4Activity.this);
+            mProgressDialog = new ProgressDialog(RxUse3Activity.this);
             mProgressDialog.show();
           }
 
@@ -100,26 +86,5 @@ public class RxUse4Activity extends AppCompatActivity {
             }
           }
         });
-  }
-
-  // 图片上绘制文字 加水印
-  private Bitmap drawTextToBitmap(
-      Bitmap bitmap,
-      String text,
-      Paint paint,
-      int paddingLeft,
-      int paddingTop) {
-    Bitmap.Config bitmapConfig = bitmap.getConfig();
-
-    paint.setDither(true); // 获取跟清晰的图像采样
-    paint.setFilterBitmap(true);// 过滤一些
-    if (bitmapConfig == null) {
-      bitmapConfig = Bitmap.Config.ARGB_8888;
-    }
-    bitmap = bitmap.copy(bitmapConfig, true);
-    Canvas canvas = new Canvas(bitmap);
-
-    canvas.drawText(text, paddingLeft, paddingTop, paint);
-    return bitmap;
   }
 }
