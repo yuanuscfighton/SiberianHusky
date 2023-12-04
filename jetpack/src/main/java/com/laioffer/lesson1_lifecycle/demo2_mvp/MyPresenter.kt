@@ -3,8 +3,9 @@ package com.laioffer.lesson1_lifecycle.demo2_mvp
 import android.util.Log
 
 /**
- * 类的描述: 模拟P层，监听生命周期
- * Created by 春夏秋冬在中南 on 2023/9/12 07:44
+ * 类描述: 模拟P层，监听生命周期
+ * <p>
+ * created by 春夏秋冬在中南 on 2023/11/28 23:28
  */
 class MyPresenter {
 

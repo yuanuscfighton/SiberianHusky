@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.laioffer.R
 
 /**
- * @description: 版本2: MVP，P层监听生命周期函数
- * @date: 2022/9/19 7:52 上午
+ * 类描述: 版本2: MVP，通过P层 监听生命周期函数
+ * <p>
+ * created by 春夏秋冬在中南 on 2023/11/28 23:31
  */
 class Demo2Activity : AppCompatActivity() {
 

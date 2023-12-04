@@ -6,8 +6,9 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
- * @description: 地图定位功能的模拟 -- 观察者 Observer
- * @date: 2022/9/21 11:03 下午
+ * 类描述: 地图定位功能的模拟 -- 观察者 Observer
+ * <p>
+ * created by 春夏秋冬在中南 on 2023/11/29 08:17
  */
 class MyLocationListener : LifecycleObserver {
 

@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.laioffer.R
 
 /**
- * @description: 被观察者 Observable
- * @date: 2022/9/21 11:02 下午
+ * 类描述: 被观察者 Observable
+ * <p>
+ * created by 春夏秋冬在中南 on 2023/11/29 08:17
  */
 class Demo4Activity : AppCompatActivity() {
 

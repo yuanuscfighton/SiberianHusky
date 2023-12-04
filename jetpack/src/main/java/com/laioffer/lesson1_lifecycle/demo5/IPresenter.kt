@@ -5,12 +5,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
- * 类的描述:中间层
+ * 类的描述: 中间层，继承 LifecycleObserver，提供生命周期回调
  * Created by 春夏秋冬在中南 on 2023/9/13 02:18
- */
-
-/*
-    中间层，继承 LifecycleObserver，提供生命周期回调
  */
 interface IPresenter : LifecycleObserver {
 

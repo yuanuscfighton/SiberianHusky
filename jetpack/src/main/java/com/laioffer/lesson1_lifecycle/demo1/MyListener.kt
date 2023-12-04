@@ -3,8 +3,8 @@ package com.laioffer.lesson1_lifecycle.demo1
 import android.util.Log
 
 /**
- * @description: 监听器
- * @date: 2022/9/19 7:55 上午
+ * 类描述: 自定义监听器
+ * created by 春夏秋冬在中南 on 2023/11/28 23:21
  */
 class MyListener {
 
