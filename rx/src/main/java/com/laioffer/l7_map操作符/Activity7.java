@@ -20,7 +20,7 @@ import io.reactivex.rxjava3.functions.Function;
  * 类的描述: map操作符源码分析
  * Created by 春夏秋冬在中南 on 2023/8/6 15:04
  */
-public class Demo7 extends AppCompatActivity {
+public class Activity7 extends AppCompatActivity {
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
