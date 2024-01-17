@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.laioffer.R
 
 /**
- * @description: 使用LifecycleOwner和LifecycleObserver实现
- * @date: 2022/9/21 8:04 上午
+ * 类描述: 使用LifecycleOwner和LifecycleObserver实现
+ * <p>
+ * created by 春夏秋冬在中南 on 2023/11/29 08:09
  */
 class Demo3Activity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {

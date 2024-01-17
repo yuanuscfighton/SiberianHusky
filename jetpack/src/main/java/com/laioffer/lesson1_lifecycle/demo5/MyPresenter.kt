@@ -3,7 +3,7 @@ package com.laioffer.lesson1_lifecycle.demo5
 import android.util.Log
 
 /**
- * 类的描述: 版本5: 接口监听法
+ * 类的描述: 以后可能会有很多子类
  * Created by 春夏秋冬在中南 on 2023/9/13 02:20
  */
 class MyPresenter : IPresenter {
