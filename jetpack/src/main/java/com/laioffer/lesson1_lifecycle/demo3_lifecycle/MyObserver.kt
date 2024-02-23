@@ -7,6 +7,7 @@ import androidx.lifecycle.OnLifecycleEvent
 
 /**
  * 类的描述: 观察者 -- 眼睛
+ *
  * Created by 春夏秋冬在中南 on 2023/9/12 07:48
  */
 class MyObserver : LifecycleObserver {
