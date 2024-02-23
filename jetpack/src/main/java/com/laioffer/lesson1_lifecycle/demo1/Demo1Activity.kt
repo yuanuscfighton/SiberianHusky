@@ -22,6 +22,7 @@ class Demo1Activity : AppCompatActivity() {
 
   override fun onStart() {
     super.onStart()
+    // 没有使用Lifecycle，就需要自己监听生命周期
     myListener?.start()
   }
 

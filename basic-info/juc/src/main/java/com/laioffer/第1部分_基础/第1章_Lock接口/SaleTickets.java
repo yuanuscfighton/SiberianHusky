@@ -8,7 +8,7 @@ public class SaleTickets {
   public static void main(String[] args) {
     Ticket ticket = new Ticket();
 
-    // 创建3个线程
+    // 创建3个线程，模拟3个售票员。一共有40张票，由3个人售卖
     new Thread(() -> {
       for (int i = 0; i < 40; i++) {
         ticket.sale();
