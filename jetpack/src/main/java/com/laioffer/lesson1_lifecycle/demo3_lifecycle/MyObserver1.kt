@@ -6,8 +6,9 @@ import androidx.lifecycle.LifecycleOwner
 
 /**
  * 类描述: 继承DefaultLifecycleObserver
- *        好处: 可以拿到Activity/Fragment的所有环境
- * <p>
+ *
+ * 好处: 可以拿到Activity/Fragment的所有环境
+ *
  * created by 春夏秋冬在中南 on 2023/11/29 08:17
  */
 class MyObserver1 : DefaultLifecycleObserver {
