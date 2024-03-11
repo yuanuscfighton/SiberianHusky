@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.laioffer'
-    compileSdk rootProject.ext.compileSdkVersion
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.laioffer.jetpack"
-        minSdk rootProject.ext.minSdkVersion
-        targetSdk rootProject.ext.targetSdkVersion
+        minSdk 26
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -35,9 +35,9 @@ android {
 dependencies {
     ////////// 基本依赖 //////////
     // kotlin依赖
-    implementation "androidx.core:core-ktx:1.10.1"
+    implementation "androidx.core:core-ktx:1.12.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "com.google.android.material:material:1.9.0"
+    implementation "com.google.android.material:material:1.11.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     implementation "junit:junit:4.13.2"
     //////////////////////////////////////////////////
@@ -45,16 +45,13 @@ dependencies {
 
 
     ////////// lifecycle相关依赖 //////////
-    // 1.ViewModel
-    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0"
-
-    // 2.liveData
-    // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata-ktx
+    // LiveData：https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata-ktx
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.7.0"
 
-    // 3.databinding
-    // https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
-    implementation "androidx.databinding:databinding-runtime:8.2.2"
+    // DataBinding：https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
+    implementation "androidx.databinding:databinding-runtime:8.3.0"
+
+    // ViewModel：https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0"
 
 }

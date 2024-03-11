@@ -11,7 +11,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.Husky">
     <activity
-      android:name=".okhttp.use1.Demo1Get"
+      android:name="com.laioffer.okhttp.use1.PostRequestActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
