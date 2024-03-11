@@ -1,6 +1,6 @@
 package com.laioffer.retrofit;
 
-import static com.laioffer.retrofit.IgnoreConstants.API_KEY;
+import static com.laioffer.IgnoreConstants.API_KEY;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
-import com.laioffer.R;
+import com.laioffer.network.R;
 
 import io.reactivex.rxjava3.functions.Consumer;
 import retrofit2.Call;
