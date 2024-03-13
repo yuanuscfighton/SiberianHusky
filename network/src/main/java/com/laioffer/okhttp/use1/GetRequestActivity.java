@@ -1,7 +1,7 @@
 package com.laioffer.okhttp.use1;
 
+import static com.laioffer.Constants.BASE_URL_1;
 import static com.laioffer.IgnoreConstants.API_KEY;
-import static com.laioffer.IgnoreConstants.BASE_URL_1;
 
 import android.os.Bundle;
 
