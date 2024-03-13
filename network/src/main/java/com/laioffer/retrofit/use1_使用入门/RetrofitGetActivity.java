@@ -1,4 +1,4 @@
-package com.laioffer.retrofit;
+package com.laioffer.retrofit.use1_使用入门;
 
 import static com.laioffer.Constants.BASE_URL_2;
 import static com.laioffer.IgnoreConstants.API_KEY;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.laioffer.network.R;
+import com.laioffer.retrofit.ApiService;
+import com.laioffer.retrofit.NewsData;
 
 import java.net.HttpURLConnection;
 
@@ -46,13 +48,13 @@ public class RetrofitGetActivity extends AppCompatActivity {
         .baseUrl(BASE_URL_2)
         .build();
 
-    // 第2步：
+    // 第3步：
     // （1）创建 网络请求接口的实例
     ApiService api = retrofit.create(ApiService.class);
     // （2）对发送请求进行封装
     Call<NewsData> task = api.getNewsData(API_KEY, 5);
 
-    // 第3步：发送网络请求（异步/同步）
+    // 第4步：发送网络请求（异步/同步）
     task.enqueue(new Callback<NewsData>() {
       @Override
       public void onResponse(@NonNull Call<NewsData> call, @NonNull Response<NewsData> response) {
@@ -60,8 +62,6 @@ public class RetrofitGetActivity extends AppCompatActivity {
         if (response.code() == HttpURLConnection.HTTP_OK) {
           // response.body().toString() 拿到的是Json字符串，希望是转成Bean类
           System.out.println("Retrofit发起GET请求. response: " + response.body().toString());
-
-
 
           // 使用Gson将Json字符串转成对象
           String result = response.body().toString();
@@ -80,7 +80,40 @@ public class RetrofitGetActivity extends AppCompatActivity {
   }
 
 
+  /**
+   * 使用转换器将Json字符串转成对象
+   */
   private void getRequest2() {
+    // 第2步：构建一个Retrofit实例
+    Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl(BASE_URL_2)
+        .addConverterFactory(GsonConverterFactory.create(new Gson())) // 设置数据解析器
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) // 支持RxJava
+        .build();
+
+    // 第3步：
+    // （1）创建 网络请求接口的实例
+    ApiService apiService = retrofit.create(ApiService.class);
+    // （2）对发送请求进行封装
+    Call<NewsData> call = apiService.getNewsData(API_KEY, 10);
+
+    // 第4步：发送网络请求（异步/同步）
+    call.enqueue(new Callback<NewsData>() {
+      @Override
+      public void onResponse(@NonNull Call<NewsData> call, @NonNull Response<NewsData> response) {
+        NewsData newsData = response.body();
+        System.out.println("[使用转换器将Json字符串转成对象] 转换后的结果是: " + newsData);
+      }
+
+      @Override
+      public void onFailure(@NonNull Call<NewsData> call, @NonNull Throwable t) {
+
+      }
+    });
+  }
+
+
+  private void getRequest3() {
     // 第4步：构建一个Retrofit实例
     Retrofit retrofit = new Retrofit.Builder()
         .baseUrl(BASE_URL_2)
