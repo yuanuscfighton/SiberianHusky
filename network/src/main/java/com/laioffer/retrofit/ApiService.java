@@ -7,13 +7,14 @@ import retrofit2.http.POST;
 
 /**
  * 类的描述: 第3步：创建 用于描述网络请求的接口
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/9/22 08:09
  */
 public interface ApiService {
 
   /* Retrofit将 http请求抽象成Java接口，使用注解 描述网络请求参数 和配置网络请求参数 */
   @POST("/guonei/index")
-  // 国内新闻：https://www.tianapi.com/apiview/4
+  // 国内新闻：https://apis.tianapi.com/guonei/index?key=你的APIKEY&num=10
   Call<NewsData> getNewsData(
       @Field("key") String apiKey,
       @Field("num") int number);

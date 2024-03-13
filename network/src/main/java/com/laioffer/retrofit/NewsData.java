@@ -1,5 +1,7 @@
 package com.laioffer.retrofit;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -21,6 +23,16 @@ public class NewsData implements Serializable {
 
   private ResultBean result;
 
+  @NonNull
+  @Override
+  public String toString() {
+    return "NewsData{" +
+        "code=" + code +
+        ", msg='" + msg + '\'' +
+        ", result=" + result +
+        '}';
+  }
+
   public static class ResultBean implements Serializable {
     private static final long serialVersionUID = 6153322961875412631L;
 
@@ -36,7 +48,20 @@ public class NewsData implements Serializable {
 
     private List<Item> list;
 
+    @NonNull
+    @Override
+    public String toString() {
+      return "ResultBean{" +
+          "curpage=" + curpage +
+          ", allnum=" + allnum +
+          ", list=" + list +
+          '}';
+    }
+
     public static class Item implements Serializable {
+
+      private static final long serialVersionUID = 6841678634566993457L;
+
       /**
        * id : cfd4b1b056a40d2fb199b94b81630fa5
        * ctime : 2021-02-04 13:57
@@ -60,6 +85,21 @@ public class NewsData implements Serializable {
       private String picUrl;
 
       private String url;
+
+
+      @NonNull
+      @Override
+      public String toString() {
+        return "Item{" +
+            "id='" + id + '\'' +
+            ", ctime='" + ctime + '\'' +
+            ", title='" + title + '\'' +
+            ", description='" + description + '\'' +
+            ", source='" + source + '\'' +
+            ", picUrl='" + picUrl + '\'' +
+            ", url='" + url + '\'' +
+            '}';
+      }
     }
   }
 }
