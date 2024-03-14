@@ -6,7 +6,7 @@ import com.laioffer.R
 
 /**
  * 类描述: 被观察者 Observable
- * <p>
+ *
  * created by 春夏秋冬在中南 on 2023/11/29 08:17
  */
 class Demo4Activity : AppCompatActivity() {

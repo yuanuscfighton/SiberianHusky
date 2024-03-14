@@ -5,13 +5,11 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
 /**
- * 类描述: 继承DefaultLifecycleObserver
- *
- * 好处: 可以拿到Activity/Fragment的所有环境
+ * 类描述: 观察者，继承 DefaultLifecycleObserver
  *
  * created by 春夏秋冬在中南 on 2023/11/29 08:17
  */
-class MyObserver1 : DefaultLifecycleObserver {
+class MyObserver1 : DefaultLifecycleObserver { // 使用 DefaultLifecycleObserver 好处是 可以拿到Activity/Fragment的所有环境
 
   private val TAG = MyObserver1::class.java.simpleName
 
