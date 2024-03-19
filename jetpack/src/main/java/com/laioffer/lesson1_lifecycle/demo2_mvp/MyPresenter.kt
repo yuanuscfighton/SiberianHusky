@@ -3,8 +3,8 @@ package com.laioffer.lesson1_lifecycle.demo2_mvp
 import android.util.Log
 
 /**
- * 类描述: 模拟P层，监听生命周期
- * <p>
+ * 类描述: 模拟P层 → 监听 Demo2Activity 生命周期
+ *
  * created by 春夏秋冬在中南 on 2023/11/28 23:28
  */
 class MyPresenter {

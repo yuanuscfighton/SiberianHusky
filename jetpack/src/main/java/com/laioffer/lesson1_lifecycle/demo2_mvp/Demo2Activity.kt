@@ -6,6 +6,7 @@ import com.laioffer.R
 
 /**
  * 类描述: 版本2: MVP，通过P层 监听生命周期函数
+ *
  * created by 春夏秋冬在中南 on 2023/11/28 23:31
  */
 class Demo2Activity : AppCompatActivity() {

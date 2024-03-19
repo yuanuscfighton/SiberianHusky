@@ -6,6 +6,7 @@ import com.laioffer.R
 
 /**
  * 类的描述: 版本1: 使用自定义监听器 来监听生命周期
+ *
  * Created by 春夏秋冬在中南 on 2023/9/12 07:41
  */
 class Demo1Activity : AppCompatActivity() {
