@@ -1,4 +1,4 @@
-package com.laioffer.lesson1_lifecycle.demo5
+package com.laioffer.lesson1_lifecycle.demo4
 
 import android.util.Log
 
@@ -7,7 +7,7 @@ import android.util.Log
  *
  * Created by 春夏秋冬在中南 on 2023/9/13 02:20
  */
-class MyPresenter1 : IPresenter {
+class MyPresenter2 : IPresenter {
   override fun onResume() {
     Log.d("TAG", "Lifecycle call onResume")
   }

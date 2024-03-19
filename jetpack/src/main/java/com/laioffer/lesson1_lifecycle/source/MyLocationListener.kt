@@ -1,4 +1,6 @@
-package com.laioffer.lesson1_lifecycle.demo4
+@file:Suppress("DEPRECATION")
+
+package com.laioffer.lesson1_lifecycle.source
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle
