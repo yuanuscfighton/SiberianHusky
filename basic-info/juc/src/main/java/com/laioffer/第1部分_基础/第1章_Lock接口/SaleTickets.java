@@ -1,8 +1,11 @@
 package com.laioffer.第1部分_基础.第1章_Lock接口;
 
 /**
- * 类的描述: 3个售票员，卖30张票
- * Created by 春夏秋冬在中南 on 2023/9/11 08:25
+ * 需求：3个售票员，卖30张票
+ * <p>
+ * 分析：
+ * （1）资源类：30张票。属性：票的数量；操作方法：卖票的动作
+ * （2）3个线程，即，3位售票员
  */
 public class SaleTickets {
   public static void main(String[] args) {
@@ -37,7 +40,7 @@ class Ticket {
   // 方法
   public synchronized void sale() {
     if (number > 0) {
-      System.out.println(Thread.currentThread().getName() + "\t卖出: " + (number--) + " \t剩余: " + number);
+      System.out.println(Thread.currentThread().getName() + " : 当前已经卖出: " + number-- + "张票, 此时还剩下: " + number + " 张票");
     }
   }
 }

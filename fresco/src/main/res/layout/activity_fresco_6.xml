@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/iv_fresco_6_icon"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="#ffff99" />
+
+  <Button
+    android:id="@+id/btn_fresco_6_step_load"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="先展示低分辨率的图，然后是高分辨率图"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_fresco_6_preview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="本地缩略图预览"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_fresco_6_reuse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="本地图片复用"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+</LinearLayout>

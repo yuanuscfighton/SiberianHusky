@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/iv_fresco_7_icon"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="#ffff99" />
+
+  <Button
+    android:id="@+id/btn_fresco_7_load"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="加载图片"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+  <TextView
+    android:id="@+id/tv_fresco_7_listener1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp"
+    android:textSize="14dp"
+    tools:ignore="SpUsage" />
+
+  <TextView
+    android:id="@+id/tv_fresco_7_listener2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp"
+    android:textSize="14dp"
+    tools:ignore="SpUsage" />
+
+</LinearLayout>

@@ -4,6 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 类的描述: 非公平锁
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/10/7 22:31
  */
 public class NonFairLock {
@@ -34,6 +35,8 @@ public class NonFairLock {
 
 class NonFairSaleTickets {
   private int number = 100;
+
+  // 非公平锁，会导致线程饿死，效率高
   private final ReentrantLock mLock = new ReentrantLock();
 
   public void sale() {

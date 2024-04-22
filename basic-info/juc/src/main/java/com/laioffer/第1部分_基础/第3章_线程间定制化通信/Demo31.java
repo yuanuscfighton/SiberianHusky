@@ -6,6 +6,12 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 类的描述: 线程间定制化通信
+ * <p>
+ * demo2_lock中的线程执行顺序不一定，可能是 AA DD ... 也可能是 AA CC
+ * <p>
+ * 需求：启动三个线程，按照如下要求，让AA线程打印2次，让BB打印3次，最后让CC打印5次，以此执行10轮
+ * 方案：设置一个标志位 flag，AA-flag=1，BB-flag=2，CC-flag=3
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/9/17 21:47
  */
 public class Demo31 {
@@ -56,6 +62,11 @@ class ShareResource {
   private final Condition c2 = lock.newCondition();
   private final Condition c3 = lock.newCondition();
 
+  /**
+   * 打印2次
+   *
+   * @param loop 轮次信息
+   */
   public void print2(int loop) throws InterruptedException {
     // 上锁
     lock.lock();
@@ -65,6 +76,7 @@ class ShareResource {
         // 等待
         c1.await();
       }
+      // 干活
       for (int i = 0; i < 2; i++) {
         System.out.println(Thread.currentThread().getName() + "::" + i + "... 轮次=" + loop);
       }
@@ -78,6 +90,9 @@ class ShareResource {
     }
   }
 
+  /**
+   * 打印3次
+   */
   public void print3(int loop) throws InterruptedException {
     // 上锁
     lock.lock();
@@ -100,6 +115,9 @@ class ShareResource {
     }
   }
 
+  /**
+   * 打印5次
+   */
   public void print5(int loop) throws InterruptedException {
     // 上锁
     lock.lock();

@@ -1,7 +1,8 @@
 package com.laioffer.第1部分_基础.第2章_线程间通信.demo1_sync;
 
 /**
- * 类的描述: 线程间通信
+ * 类的描述: 线程间通信 : 虚假唤醒 - 解决方案
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/9/17 16:46
  */
 public class Demo13 {

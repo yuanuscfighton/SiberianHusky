@@ -34,7 +34,8 @@ public class FairLock {
 
 class FairSaleTickets {
   private int number = 100;
-  // 公平锁
+
+  // 公平锁：阳光普照，效率相对低
   private final ReentrantLock mLock = new ReentrantLock(true);
 
   public void sale() {
