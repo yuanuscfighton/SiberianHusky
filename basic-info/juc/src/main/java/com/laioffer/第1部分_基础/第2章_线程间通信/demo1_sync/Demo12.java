@@ -2,6 +2,7 @@ package com.laioffer.第1部分_基础.第2章_线程间通信.demo1_sync;
 
 /**
  * 类的描述: 线程间通信 : 虚假唤醒
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/9/17 16:46
  */
 public class Demo12 {
@@ -76,6 +77,22 @@ class Share12 {
     this.notifyAll();
   }
 }
+
+/*
+解释虚假唤醒问题:
+  现在有4个线程，AA,BB,CC,DD，其中，AA负责+1, BB负责-1, CC负责+1, DD负责-1
+
+  AA    BB    CC    DD
+  1
+              等待
+
+
+CC等待，其它线程都可能抢到锁，AA又抢到锁了，发现 number 不是0，所以等待，其它线程抢锁，CC抢到锁了，此时就会出现 number 超过1的情况
+
+*/
+
+
+
 
 /*
 打印结果：

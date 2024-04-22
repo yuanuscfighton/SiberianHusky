@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/iv_fresco_5_icon"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="#ffff99" />
+
+  <Button
+    android:id="@+id/btn_fresco_5_request"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="请求网络图片"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_fresco_5_start_gif"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="开始播放Gif图"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+  <Button
+    android:id="@+id/btn_fresco_5_stop_gif"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CCCCCC"
+    android:text="停止播放Gif图"
+    android:textAllCaps="false"
+    tools:ignore="HardcodedText" />
+
+</LinearLayout>
