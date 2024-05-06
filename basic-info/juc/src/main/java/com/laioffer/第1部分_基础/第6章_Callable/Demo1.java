@@ -6,13 +6,14 @@ import java.util.concurrent.FutureTask;
 
 /**
  * 类的描述: 实现Callable接口
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/10/9 08:19
  */
 public class Demo1 {
 
   public static void main(String[] args) throws ExecutionException, InterruptedException {
-    // 找一个类，既和Callable有关系，有和Runnable有关系
-    // Runnable接口有实现了FutureTask，FutureTask构造可以传递Callable
+    // 找一个类，既和 Callable 有关系，又和 Runnable 有关系
+    // Runnable 接口有实现了 FutureTask，FutureTask 构造可以传递 Callable
     FutureTask<String> futureTask = new FutureTask<>(new MyThread1());
 
     new Thread(futureTask, "FutureTask").start();
@@ -31,3 +32,9 @@ class MyThread1 implements Callable<String> {
     return "实现Callable接口";
   }
 }
+
+/*
+    Callable 接口
+    （1）有返回值
+    （2）会抛出异常
+ */

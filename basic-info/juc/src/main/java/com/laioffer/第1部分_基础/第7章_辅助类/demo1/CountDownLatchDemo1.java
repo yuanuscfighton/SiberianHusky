@@ -18,12 +18,12 @@ public class CountDownLatchDemo1 {
         System.out.println(Thread.currentThread().getName() + "号同学离开了教室");
 
         // 计数 -1
-        countDownLatch.countDown();
+        countDownLatch.countDown(); // 调用 countdown 方法的线程不会阻塞
       }, String.valueOf(i)).start();
     }
 
     // 等待
-    countDownLatch.await();
+    countDownLatch.await(); // 当一个或多个线程调用 await 方法时，这些线程会阻塞
 
     System.out.println(Thread.currentThread().getName() + "... 班长离开教室");
   }
