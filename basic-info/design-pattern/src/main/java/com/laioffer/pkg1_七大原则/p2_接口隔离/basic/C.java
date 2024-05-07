@@ -1,7 +1,7 @@
 package com.laioffer.pkg1_七大原则.p2_接口隔离.basic;
 
 /**
- * C类通过接口Interface1 依赖(使用)B类，但是只会用到operation1、4、5方法
+ * C 类通过接口 Interface1 依赖(即，使用) D 类，但是只会用到 operation1、operation4、operation5 方法
  */
 public class C {
   
