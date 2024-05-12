@@ -1,12 +1,12 @@
 package com.laioffer.pkg5_装饰者模式;
 
-public class Soy extends Decorator{
+// 豆浆 调味品
+public class Soy extends Decorator {
 
-	public Soy(Drink obj) {
-		super(obj);
-		// TODO Auto-generated constructor stub
-		setDes(" ����  ");
-		setPrice(1.5f);
-	}
+  public Soy(Drink obj) {
+    super(obj);
+    setDescription(" 豆浆 ");
+    setPrice(1.5f);
+  }
 
 }
