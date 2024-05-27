@@ -16,7 +16,8 @@ public class Ocp {
 
 }
 
-// 绘图的类
+// 绘图的类 —— 使用方
+// 即使我们新增一个类，使用方也没有修改
 class GraphicEditor {
   // 接收 Shape 对象，然后根据 type，来绘制不同的图形
   public void drawShape(Shape s) {

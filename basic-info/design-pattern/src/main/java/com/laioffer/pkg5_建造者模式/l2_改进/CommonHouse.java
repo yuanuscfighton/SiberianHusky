@@ -18,4 +18,5 @@ public class CommonHouse extends HouseBuilder {
   }
 
   // 房子具体的建造过程是写在子类里了（即，CommonHouse），产品本身属性是封装在 House 里了
+  // 将产品和制造流程分开了（解耦了）
 }

@@ -6,11 +6,12 @@ public class Ocp {
     GraphicEditor graphicEditor = new GraphicEditor();
     graphicEditor.drawShape(new Rectangle());
     graphicEditor.drawShape(new Circle());
+    graphicEditor.drawTriangle(new Triangle());
   }
 
 }
 
-// 绘图的类
+// 绘图的类 —— 使用方
 class GraphicEditor {
   // 接收 Shape 对象，然后根据 type，来绘制不同的图形
   public void drawShape(Shape s) {
@@ -18,6 +19,8 @@ class GraphicEditor {
       drawRectangle(s);
     } else if (s.mType == 2) {
       drawCircle(s);
+    } else if (s.mType == 3) {
+      drawTriangle(s);
     }
   }
 
@@ -27,6 +30,10 @@ class GraphicEditor {
 
   public void drawCircle(Shape c) {
     System.out.println(" 绘制圆形 ");
+  }
+
+  public void drawTriangle(Shape t) {
+    System.out.println(" 绘制三角形 ");
   }
 }
 
@@ -44,5 +51,11 @@ class Rectangle extends Shape {
 class Circle extends Shape {
   public Circle() {
     mType = 2;
+  }
+}
+
+class Triangle extends Shape {
+  public Triangle() {
+    mType = 3;
   }
 }

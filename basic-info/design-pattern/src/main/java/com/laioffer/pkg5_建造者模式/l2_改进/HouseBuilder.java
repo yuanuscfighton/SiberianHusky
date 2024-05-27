@@ -4,6 +4,7 @@ package com.laioffer.pkg5_建造者模式.l2_改进;
 // 抽象的建造者
 public abstract class HouseBuilder {
 
+  // 把 House 组合到 Builder 里
   protected House house = new House();
 
   // 将建造的流程写好，抽象的方法
