@@ -1,8 +1,8 @@
-package com.laioffer.pkgx_装饰者模式;
+package com.laioffer.pkg8_装饰者模式;
 
 public abstract class Drink {
 
-  public String mDescription; // ����
+  public String mDescription; // 描述
   private float mPrice = 0.0f;
 
   public String getDescription() {

@@ -1,6 +1,9 @@
-package com.laioffer.pkgx_装饰者模式;
+package com.laioffer.pkg8_装饰者模式;
 
+// 调味品
 public class Decorator extends Drink {
+
+  // 调料中 组合单品咖啡☕️
   private final Drink mObj;
 
   public Decorator(Drink obj) {
@@ -16,8 +19,8 @@ public class Decorator extends Drink {
 
   @Override
   public String getDescription() {
-    // mObj.getDescription() 被装饰者的信息
-    return super.mDescription + " " + getPrice() + " && " + mObj.getDescription();
+    // mObj.getDescription() 被装饰者的信息，即，单品咖啡的描述
+    return super.mDescription + " " + super.getPrice() + " && " + mObj.getDescription();
   }
 
 

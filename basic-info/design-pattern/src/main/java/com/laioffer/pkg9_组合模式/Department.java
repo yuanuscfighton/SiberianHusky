@@ -1,32 +1,26 @@
-package com.laioffer.pkgx_组合模式;
+package com.laioffer.pkg9_组合模式;
 
+// 最小的单位，系下面没有叶子节点了
 public class Department extends OrganizationComponent {
-
-  //û�м���
 
   public Department(String name, String des) {
     super(name, des);
-    // TODO Auto-generated constructor stub
   }
 
-
-  //add , remove �Ͳ���д�ˣ���Ϊ����Ҷ�ӽڵ�
+  // add 和 remove 方法就不用写了，因为 Department 是叶子节点
 
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
     return super.getName();
   }
 
   @Override
   public String getDes() {
-    // TODO Auto-generated method stub
     return super.getDes();
   }
 
   @Override
   protected void print() {
-    // TODO Auto-generated method stub
     System.out.println(getName());
   }
 

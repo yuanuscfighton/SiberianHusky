@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_装饰者模式;
+package com.laioffer.pkg8_装饰者模式;
 
 // 豆浆 调味品
 public class Soy extends Decorator {

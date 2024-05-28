@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_装饰者模式;
+package com.laioffer.pkg8_装饰者模式;
 
 // 具体的 Decorator。即，调味品的价格
 public class Chocolate extends Decorator {

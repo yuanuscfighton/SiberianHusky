@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_外观模式;
+package com.laioffer.pkg10_外观模式;
 
 // 投影仪
 public class Projector {
