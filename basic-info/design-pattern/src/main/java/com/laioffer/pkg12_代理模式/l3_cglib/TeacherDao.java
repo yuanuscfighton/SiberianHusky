@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_代理模式.l3_cglib;
+package com.laioffer.pkg12_代理模式.l3_cglib;
 
 public class TeacherDao {
 

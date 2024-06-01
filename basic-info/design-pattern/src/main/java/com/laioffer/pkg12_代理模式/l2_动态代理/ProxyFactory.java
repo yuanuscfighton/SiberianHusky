@@ -1,20 +1,22 @@
-package com.laioffer.pkgx_代理模式.l2_动态代理;
+package com.laioffer.pkg12_代理模式.l2_动态代理;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+// 代理工厂
 public class ProxyFactory {
 
   // 维护一个目标对象，Object 类型
   private final Object mTarget;
 
-  // 构造器，对 target 进行初始化
+  // 构造器，对 mTarget 进行初始化
   public ProxyFactory(Object target) {
     mTarget = target;
   }
 
-  // 给目标对象（即，被代理对象）生成一个代理对象
+  // 根据传入的明确目标对象（即，mTarget，被代理对象），利用反射机制，返回一个代理对象
+  // 通过代理对象，调用目标对象的方法
   public Object getProxyInstance() {
 
 		/*
@@ -32,10 +34,10 @@ public class ProxyFactory {
         new InvocationHandler() {
           @Override
           public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            // method: public abstract void com.laioffer.pkg4_代理模式.l2_动态代理.ITeacherDao.teach()
+            // method: public abstract void com.laioffer.pkg12_代理模式.l2_动态代理.ITeacherDao.teach()
             System.out.println("JDK代理开始...");
             // 反射机制调用目标对象的方法
-            Object returnVal = method.invoke(mTarget, args);
+            Object returnVal = method.invoke(mTarget, args); // 方法参数会放在 args 里
             System.out.println("JDK代理结束...");
             return returnVal;
           }

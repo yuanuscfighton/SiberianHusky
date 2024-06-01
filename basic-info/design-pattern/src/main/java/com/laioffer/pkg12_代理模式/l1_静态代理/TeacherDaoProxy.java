@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_代理模式.l1_静态代理;
+package com.laioffer.pkg12_代理模式.l1_静态代理;
 
 /**
  * 代理对象，静态代理

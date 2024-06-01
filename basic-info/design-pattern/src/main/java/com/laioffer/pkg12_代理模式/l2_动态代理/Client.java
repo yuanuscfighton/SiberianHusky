@@ -1,9 +1,9 @@
-package com.laioffer.pkgx_代理模式.l2_动态代理;
+package com.laioffer.pkg12_代理模式.l2_动态代理;
 
 public class Client {
 
   public static void main(String[] args) {
-    // 创建目标对象
+    // 创建目标对象（被代理对象）
     ITeacherDao target = new TeacherDao();
 
     // 给目标对象，创建代理对象。可以转成 ITeachDao

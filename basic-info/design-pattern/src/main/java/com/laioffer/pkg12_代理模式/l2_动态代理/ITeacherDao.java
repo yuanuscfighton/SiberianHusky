@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_代理模式.l2_动态代理;
+package com.laioffer.pkg12_代理模式.l2_动态代理;
 
 public interface ITeacherDao {
 

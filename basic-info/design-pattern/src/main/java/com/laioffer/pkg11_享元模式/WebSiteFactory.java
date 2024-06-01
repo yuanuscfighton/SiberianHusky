@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_享元模式;
+package com.laioffer.pkg11_享元模式;
 
 import java.util.HashMap;
 import java.util.Map;

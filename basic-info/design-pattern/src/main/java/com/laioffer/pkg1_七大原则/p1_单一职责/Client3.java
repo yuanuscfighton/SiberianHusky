@@ -5,7 +5,7 @@ package com.laioffer.pkg1_七大原则.p1_单一职责;
  * <p>
  * created by 春夏秋冬在中南 on 2024/4/14 16:44
  */
-public class Demo3 {
+public class Client3 {
 
   public static void main(String[] args) {
 

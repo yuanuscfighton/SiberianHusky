@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_代理模式.l1_静态代理;
+package com.laioffer.pkg12_代理模式.l1_静态代理;
 
 public class Client {
 
@@ -14,7 +14,3 @@ public class Client {
     teacherDaoProxy.teach();
   }
 }
-
-/*
-    画图：https://www.processon.com/diagraming/6630a3c36439e50243125eed
- */

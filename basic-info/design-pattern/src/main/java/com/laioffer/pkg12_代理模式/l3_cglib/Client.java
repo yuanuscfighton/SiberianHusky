@@ -1,6 +1,6 @@
-package com.laioffer.pkgx_代理模式.l3_cglib;
+package com.laioffer.pkg12_代理模式.l3_cglib;
 
-import com.laioffer.pkgx_代理模式.l2_动态代理.ProxyFactory;
+import com.laioffer.pkg12_代理模式.l2_动态代理.ProxyFactory;
 
 public class Client {
 

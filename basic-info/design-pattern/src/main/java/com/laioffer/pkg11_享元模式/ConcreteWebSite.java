@@ -1,4 +1,4 @@
-package com.laioffer.pkgx_享元模式;
+package com.laioffer.pkg11_享元模式;
 
 // 具体的网站
 public class ConcreteWebSite extends WebSite {
