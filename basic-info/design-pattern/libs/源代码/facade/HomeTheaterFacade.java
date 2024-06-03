@@ -1,5 +1,6 @@
 package com.laioffer.源代码.facade;
 
+// 影院的外观类（Facade）
 public class HomeTheaterFacade {
 	
 	//���������ϵͳ����
