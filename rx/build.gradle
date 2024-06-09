@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.laioffer.rx'
-    compileSdk rootProject.ext.compileSdkVersion
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.laioffer.rx"
-        minSdk rootProject.ext.minSdkVersion
-        targetSdk rootProject.ext.targetSdkVersion
+        minSdk 26
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -47,4 +47,22 @@ dependencies {
 
     // 操作功能防抖, RxBinding
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+    // stetho
+    implementation "com.facebook.stetho:stetho:1.6.0"
+    // stetho-okhttp3
+    // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
+    implementation "com.facebook.stetho:stetho-okhttp3:1.6.0"
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.14"
+    // okhttp3-logging-intercepter
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14"
+    // Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:2.11.0"
+    implementation "com.squareup.retrofit2:retrofit-mock:2.11.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.11.0"
+    implementation "com.squareup.retrofit2:converter-scalars:2.11.0"
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava3/2.9.0
+    implementation "com.squareup.retrofit2:adapter-rxjava3:2.11.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.11.0"
 }
