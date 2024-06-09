@@ -1,4 +1,4 @@
-package com.laioffer.源代码.template;
+package com.laioffer.pkg13_模版模式.l2_钩子方法;
 
 public class PeanutSoyaMilk extends SoyaMilk {
 

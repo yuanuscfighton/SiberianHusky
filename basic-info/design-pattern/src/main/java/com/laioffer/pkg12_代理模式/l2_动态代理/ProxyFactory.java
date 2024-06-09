@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 // 代理工厂
 public class ProxyFactory {
 
-  // 维护一个目标对象，Object 类型
+  // 维护一个目标对象（即，被代理对象），Object 类型
   private final Object mTarget;
 
   // 构造器，对 mTarget 进行初始化
