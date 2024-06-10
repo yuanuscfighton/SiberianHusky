@@ -8,6 +8,7 @@ import com.laioffer.R
 
 /**
  * 类的描述: LiveData粘性事件
+ *
  * Created by 春夏秋冬在中南 on 2023/9/17 10:56
  */
 class MainActivity3 : AppCompatActivity() {
