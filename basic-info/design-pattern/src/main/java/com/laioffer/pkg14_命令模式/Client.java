@@ -3,14 +3,12 @@ package com.laioffer.pkg14_命令模式;
 public class Client {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
 
-    //ʹ���������ģʽ�����ͨ��ң�������Ե�ƵĲ���
-
-    //������ƵĶ���(������)
+    // 使用命令设计模式，完成通过遥控器，对电灯的操作
+    // 创建电灯的对象（接收者）
     LightReceiver lightReceiver = new LightReceiver();
 
-    //���������صĿ�������
+    // 创建电灯相关的开关命令
     LightOnCommand lightOnCommand = new LightOnCommand(lightReceiver);
     LightOffCommand lightOffCommand = new LightOffCommand(lightReceiver);
 

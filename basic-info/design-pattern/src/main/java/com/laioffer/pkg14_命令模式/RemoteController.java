@@ -2,17 +2,15 @@ package com.laioffer.pkg14_命令模式;
 
 public class RemoteController {
 
-  // �� ��ť����������
+  // 开 按钮的命令数组
   Command[] onCommands;
   Command[] offCommands;
 
-  // ִ�г���������
+  // 执行撤销的命令
   Command undoCommand;
 
-  // ����������ɶ԰�ť��ʼ��
-
+  // 构造器，完成对按钮的初始化
   public RemoteController() {
-
     onCommands = new Command[5];
     offCommands = new Command[5];
 
@@ -22,31 +20,30 @@ public class RemoteController {
     }
   }
 
-  // �����ǵİ�ť��������Ҫ������
+  // 给我们的按钮设置你需要的命令，比如有 开灯按钮，打开电视按钮，等等...
   public void setCommand(int no, Command onCommand, Command offCommand) {
     onCommands[no] = onCommand;
     offCommands[no] = offCommand;
   }
 
-  // ���¿���ť
-  public void onButtonWasPushed(int no) { // no 0
-    // �ҵ��㰴�µĿ��İ�ť�� �����ö�Ӧ����
+  // 按下「开」按钮
+  public void onButtonWasPushed(int no) {
+    // 找到你按下的「开」的按钮，并调用对应的方法，例如第1排的开灯的按钮
     onCommands[no].execute();
-    // ��¼��εĲ��������ڳ���
+    // 记录这次的操作，用于撤销操作
     undoCommand = onCommands[no];
-
   }
 
-  // ���¿���ť
-  public void offButtonWasPushed(int no) { // no 0
-    // �ҵ��㰴�µĹصİ�ť�� �����ö�Ӧ����
+  // 按下「关」按钮
+  public void offButtonWasPushed(int no) {
+    // 找到你按下的「关」的按钮，并调用对应的方法
     offCommands[no].execute();
-    // ��¼��εĲ��������ڳ���
+    // 记录这次的操作，用于撤销
     undoCommand = offCommands[no];
 
   }
 
-  // ���³�����ť
+  // 按下「撤销」按钮
   public void undoButtonWasPushed() {
     undoCommand.undo();
   }
