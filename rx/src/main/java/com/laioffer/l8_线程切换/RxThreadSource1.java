@@ -38,8 +38,10 @@ public class RxThreadSource1 {
             emitter.onNext("线程切换");
           }
         })
+        // 相当于是 ObservableCreate . subscribeOn()
         .subscribeOn(Schedulers.io())
-        .subscribe(
+        // 相当于是 ObservableSubscribeOn . subscribe()
+        .subscribe( // 所有的流程是从 订阅开始的
             new Observer<String>() {
               @Override
               public void onSubscribe(@NonNull Disposable d) {

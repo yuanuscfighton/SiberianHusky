@@ -10,7 +10,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.Husky">
     <activity
-      android:name="com.laioffer.l5_hook.Activity5"
+      android:name="com.laioffer.l8_线程切换.RxThreadSource2"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
