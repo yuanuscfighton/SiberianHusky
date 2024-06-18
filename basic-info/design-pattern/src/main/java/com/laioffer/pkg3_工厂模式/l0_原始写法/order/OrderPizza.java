@@ -9,14 +9,18 @@ import com.laioffer.pkg3_工厂模式.l0_原始写法.pizza.GreekPizza;
 import com.laioffer.pkg3_工厂模式.l0_原始写法.pizza.PepperPizza;
 import com.laioffer.pkg3_工厂模式.l0_原始写法.pizza.Pizza;
 
-
-// 订购披萨🍕
+/**
+ * 类描述: 订购披萨 🍕
+ */
 public class OrderPizza {
 
+  // 构造器
   public OrderPizza() {
     while (true) {
       Pizza pizza;
-      String orderType = getType(); // 订购披萨的类型
+
+      // 订购披萨的类型
+      String orderType = getType();
 
       switch (orderType) {
         case "greek":
