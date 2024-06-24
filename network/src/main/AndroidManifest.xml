@@ -12,7 +12,7 @@
     android:theme="@style/Theme.Husky"
     android:usesCleartextTraffic="true">
     <activity
-      android:name="com.laioffer.okhttp.use1.PostRequestActivity"
+      android:name="com.laioffer.okhttp.use1.PostRequestClient"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

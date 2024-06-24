@@ -1,7 +1,8 @@
-package com.laioffer.okhttp.source;
+package com.laioffer.okhttp.use1;
 
-import static com.laioffer.Constants.BASE_URL_1;
-import static com.laioffer.IgnoreConstants.API_KEY;
+import static com.laioffer.Constants.BASE_URL;
+import static com.laioffer.Constants.KEJI;
+import static com.laioffer.Constants.PUBLIC_API_KEY;
 
 import android.os.Bundle;
 
@@ -10,31 +11,38 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.laioffer.network.R;
-import com.laioffer.source.okhttp3.Call;
-import com.laioffer.source.okhttp3.Callback;
-import com.laioffer.source.okhttp3.OkHttpClient;
-import com.laioffer.source.okhttp3.Request;
-import com.laioffer.source.okhttp3.Response;
-import com.laioffer.source.okhttp3.ResponseBody;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class SourceActivity extends AppCompatActivity {
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+
+/**
+ * 类的描述: okhttp使用1: GET请求
+ * <p>
+ * Created by 春夏秋冬在中南 on 2023/6/18 16:06
+ */
+public class GetRequestClient extends AppCompatActivity {
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     findViewById(R.id.network_btn_1).setOnClickListener(v -> {
-      getRequestAsync();
+//      getRequestAsync();
+      getRequestSync();
     });
   }
 
   /**
-   * OkHttp GET请求
+   * OkHttp GET请求 同步请求
    */
-  private void getRequestSync() throws IOException {
+  private void getRequestSync() {
     // 1.创建OKHttpClient对象，类似我们要有一个浏览器
     OkHttpClient client = new OkHttpClient.Builder()
         .connectTimeout(10_000, TimeUnit.MILLISECONDS)
@@ -43,7 +51,7 @@ public class SourceActivity extends AppCompatActivity {
     // 2.构建Request对象，创建请求内容
     Request request = new Request.Builder()
         .get()
-        .url(BASE_URL_1 + "?key=" + API_KEY)
+        .url(BASE_URL + KEJI + "?key=" + PUBLIC_API_KEY)
         .build();
 
     // 3. 用client去创建请求任务
@@ -51,12 +59,23 @@ public class SourceActivity extends AppCompatActivity {
 
     // 4.同步调用，返回Response，会抛出IO异常
     // 调用execute()后，代码会阻塞在这里，直到服务器有了响应之后，才能继续往下走，得到response
-    Response response = call.execute();
+    Response response = null;
+    try {
+      response = call.execute();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
-    ResponseBody body = response.body();
+    ResponseBody body = null;
+    if (response != null) {
+      body = response.body();
+    }
     System.out.println("接口Response=" + body);
   }
 
+  /**
+   * OkHttp GET请求 异步请求
+   */
   private void getRequestAsync() {
     // 1.创建OKHttpClient对象，类似我们要有一个浏览器
     OkHttpClient client = new OkHttpClient.Builder()
@@ -66,7 +85,7 @@ public class SourceActivity extends AppCompatActivity {
     // 2.构建Request对象，创建请求内容
     Request request = new Request.Builder()
         .get()
-        .url(BASE_URL_1 + "?key=" + API_KEY)
+        .url(BASE_URL + KEJI + "?key=" + PUBLIC_API_KEY)
         .build();
 
     // 3. 用client去创建请求任务
