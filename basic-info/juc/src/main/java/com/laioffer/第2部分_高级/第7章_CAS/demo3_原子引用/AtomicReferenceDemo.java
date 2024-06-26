@@ -1,7 +1,5 @@
 package com.laioffer.第2部分_高级.第7章_CAS.demo3_原子引用;
 
-import androidx.annotation.NonNull;
-
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -30,7 +28,6 @@ class User {
     this.age = age;
   }
 
-  @NonNull
   @Override
   public String toString() {
     return "User{" +
