@@ -6,6 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 类的描述: 使用Lock实现线程之间通信
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/9/17 21:25
  */
 public class Demo21 {

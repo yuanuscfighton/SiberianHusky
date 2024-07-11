@@ -2,9 +2,6 @@ package com.laioffer.okhttp.use3_重试重定向拦截器
 
 import okhttp3.Authenticator
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
-import okhttp3.Route
 
 /**
  * 类的描述: 自定义ProxyAuthenticator拦截器
@@ -14,9 +11,9 @@ fun main() {
   val okHttpClient = OkHttpClient.Builder()
     .proxyAuthenticator(object : Authenticator {
       override fun authenticate(
-        route: Route?,
-        response: Response
-      ): Request {
+        route: com.laioffer.source.okhttp3.Route?,
+        response: com.laioffer.source.okhttp3.Response
+      ): com.laioffer.source.okhttp3.Request? {
         return response.request
           .newBuilder()
           /*

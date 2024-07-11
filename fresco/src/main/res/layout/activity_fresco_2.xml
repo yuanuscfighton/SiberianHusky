@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/iv_fresco_2_icon"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="#ffff99" />
+
+  <TextView
+    android:id="@+id/tv_fresco_2_desc"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:paddingHorizontal="10dp"
+    android:textColor="#222222"
+    android:textSize="16dp"
+    tools:ignore="SpUsage" />
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <Button
+        android:id="@+id/btn_fresco_2_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:text="CENTER"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_center_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="CENTER_CROP"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_focus_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="FOCUS_CROP"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_center_inside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="CENTER_INSIDE"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_fit_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="FIT_CENTER"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_fit_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="FIT_START"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_fit_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="FIT_END"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_fit_xy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="FIT_XY"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+      <Button
+        android:id="@+id/btn_fresco_2_fit_none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        android:text="NONE"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.laioffer.第1部分_基础.第5章_多线程锁.demo2_可重入锁;
 
 /**
  * 类的描述: synchronized 可重入锁 or 递归锁
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/10/7 22:46
  */
 public class ReenterSyncDemo {

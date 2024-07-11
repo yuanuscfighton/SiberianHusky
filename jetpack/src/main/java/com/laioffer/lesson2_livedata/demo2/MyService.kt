@@ -7,8 +7,9 @@ import android.util.Log
 import kotlin.concurrent.thread
 
 /**
- * @description 模拟微信后台推送消息
- * @date 2023/2/3 01:58
+ * 类描述: 模拟微信后台推送消息
+ *
+ * created by 春夏秋冬在中南 on 2024/5/15 22:58
  */
 class MyService : Service() {
 

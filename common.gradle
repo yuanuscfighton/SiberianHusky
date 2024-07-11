@@ -9,56 +9,50 @@ ext {
     versionName = "1.0"
 
     dependencies = [
-            // kotlin依赖
-            "core-ktx"                   : "androidx.core:core-ktx:1.10.1",
-            "appcompat"                  : "androidx.appcompat:appcompat:1.6.1",
-            "material"                   : "com.google.android.material:material:1.9.0",
-            "constraintlayout"           : "androidx.constraintlayout:constraintlayout:2.1.4",
-            "junit"                      : "junit:junit:4.13.2",
-
-            // RxJava
-            "rxjava"                     : "io.reactivex.rxjava3:rxjava:3.1.6",
-            "rxandroid"                  : "io.reactivex.rxjava3:rxandroid:3.0.2",
-
-            // 操作功能防抖
-            "rxbinding"                  : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
-
-            // stetho
-            "stetho"                     : "com.facebook.stetho:stetho:1.6.0",
-            // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
-            "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
-            // OkHttp
-            "okhttp3"                    : "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
-            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11",
-            // Retrofit2
-            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.9.0",
-            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.9.0",
-            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.9.0",
-            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.9.0",
-            // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava3/2.9.0
-            "retrofit2-adapter3-rxjava"  : "com.squareup.retrofit2:adapter-rxjava3:2.9.0",
-            "retrofit2-converter-moshi"  : "com.squareup.retrofit2:converter-moshi:2.9.0",
-
-
-            // ViewPager
-            "ViewPager"                  : "androidx.viewpager:viewpager:1.0.0",
-            // ViewPager2
-            "ViewPager2"                 : "androidx.viewpager2:viewpager2:1.0.0",
-            "gson"                       : "com.google.code.gson:gson:2.10.1",
-            "glide"                      : "com.github.bumptech.glide:glide:4.15.1",
-
-            // lifecycle-ViewModel
-            // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx
-            "lifecyle-viewmodel"         : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1",
-            // lifecycle-liveData
-            // https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-livedata-ktx
-            "lifecycle-livedata"         : "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1",
-            // https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
-            "lifecycle-databinding"      : "androidx.databinding:databinding-runtime:8.1.0",
-
-            // dagger2: https://github.com/google/dagger
-            "dagger2"                    : 'com.google.dagger:dagger:2.47',
-            "hilt"                       : "com.google.dagger:hilt-android:2.44.2"
+//            // kotlin依赖
+//            "core-ktx"                   : "androidx.core:core-ktx:1.10.1",
+//            "appcompat"                  : "androidx.appcompat:appcompat:1.6.1",
+//            "material"                   : "com.google.android.material:material:1.9.0",
+//            "constraintlayout"           : "androidx.constraintlayout:constraintlayout:2.1.4",
+//            "junit"                      : "junit:junit:4.13.2",
+//
+//            // RxJava
+//            "rxjava"                     : "io.reactivex.rxjava3:rxjava:3.1.6",
+//            "rxandroid"                  : "io.reactivex.rxjava3:rxandroid:3.0.2",
+//
+//            // 操作功能防抖
+//            "rxbinding"                  : "com.jakewharton.rxbinding4:rxbinding:4.0.0",
+//
+//            // stetho
+//            "stetho"                     : "com.facebook.stetho:stetho:1.6.0",
+//            // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
+//            "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
+//            // OkHttp
+//            "okhttp3"                    : "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
+//            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11",
+//            // Retrofit2
+//            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.9.0",
+//            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.9.0",
+//            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.9.0",
+//            "retrofit2-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.9.0",
+//            // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava3/2.9.0
+//            "retrofit2-adapter3-rxjava"  : "com.squareup.retrofit2:adapter-rxjava3:2.9.0",
+//            "retrofit2-converter-moshi"  : "com.squareup.retrofit2:converter-moshi:2.9.0",
+//
+//
+//            // ViewPager
+//            "ViewPager"                  : "androidx.viewpager:viewpager:1.0.0",
+//            // ViewPager2
+//            "ViewPager2"                 : "androidx.viewpager2:viewpager2:1.0.0",
+//            "gson"                       : "com.google.code.gson:gson:2.10.1",
+//            "glide"                      : "com.github.bumptech.glide:glide:4.15.1",
+//
+//            // https://mvnrepository.com/artifact/androidx.databinding/databinding-runtime
+//            "lifecycle-databinding"      : "androidx.databinding:databinding-runtime:8.1.0",
+//
+//            // dagger2: https://github.com/google/dagger
+//            "dagger2"                    : 'com.google.dagger:dagger:2.47',
+//            "hilt"                       : "com.google.dagger:hilt-android:2.44.2"
     ]
 
 }
