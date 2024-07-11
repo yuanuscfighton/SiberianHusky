@@ -10,7 +10,6 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.laioffer.app.R;
 
 /**
  * 设置 圆角 / 圆形 图片

@@ -31,6 +31,7 @@ public class OrderPizza {
           pizza = new CheesePizza();
           pizza.setName("奶酪披萨");
           break;
+          // TODO: 新增的披萨种类，修改了使用方代码 --> 不满足OCP原则
         case "pepper":
           pizza = new PepperPizza();
           pizza.setName("胡椒披萨");

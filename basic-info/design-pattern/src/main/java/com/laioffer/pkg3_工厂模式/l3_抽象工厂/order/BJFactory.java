@@ -9,7 +9,6 @@ public class BJFactory implements AbsFactory {
 
   @Override
   public Pizza createPizza(String orderType) {
-    System.out.println("");
     Pizza pizza = null;
 
     if (orderType.equals("cheese")) {

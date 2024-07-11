@@ -1,6 +1,8 @@
 package com.laioffer.pkg5_建造者模式.l2_改进;
 
-// 产品 → Product
+/**
+ * 产品 → Product
+ */
 public class House {
   private String mBasic;
   private String mWall;

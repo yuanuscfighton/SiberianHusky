@@ -1,7 +1,7 @@
 package com.laioffer.pkg6_适配器模式.l1_类适配器;
 
 /**
- * 被适配的类
+ * 被适配者，原始电压 220V
  */
 public class Voltage220V {
   // 输出220V的电压

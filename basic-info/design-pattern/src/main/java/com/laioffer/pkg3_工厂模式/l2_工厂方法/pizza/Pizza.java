@@ -1,6 +1,7 @@
 package com.laioffer.pkg3_工厂模式.l2_工厂方法.pizza;
 
 public abstract class Pizza {
+
   protected String name;
 
   public abstract void prepare();

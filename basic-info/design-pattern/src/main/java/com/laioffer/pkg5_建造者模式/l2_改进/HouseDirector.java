@@ -1,6 +1,8 @@
 package com.laioffer.pkg5_建造者模式.l2_改进;
 
-// 指挥者，这里去指定制作流程，返回产品
+/**
+ * 指挥者角色，这里去指定制作流程，返回产品
+ */
 public class HouseDirector {
 
   HouseBuilder mHouseBuilder;

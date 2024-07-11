@@ -16,7 +16,7 @@ public class Ocp {
 
 }
 
-// 绘图的类 —— 使用方
+// 绘图的类 --> 使用方
 // 即使我们新增一个类，使用方也没有修改
 class GraphicEditor {
   // 接收 Shape 对象，然后根据 type，来绘制不同的图形
@@ -26,7 +26,8 @@ class GraphicEditor {
 }
 
 abstract class Shape {
-  int m_type;
+
+  int mType;
 
   // 抽象方法
   public abstract void draw();
@@ -34,7 +35,7 @@ abstract class Shape {
 
 class Rectangle extends Shape {
   public Rectangle() {
-    super.m_type = 1;
+    super.mType = 1;
   }
 
   @Override
@@ -45,7 +46,7 @@ class Rectangle extends Shape {
 
 class Circle extends Shape {
   public Circle() {
-    super.m_type = 2;
+    super.mType = 2;
   }
 
   @Override
@@ -56,7 +57,7 @@ class Circle extends Shape {
 
 class Triangle extends Shape {
   public Triangle() {
-    super.m_type = 3;
+    super.mType = 3;
   }
 
   @Override
@@ -68,7 +69,7 @@ class Triangle extends Shape {
 /* 新增一个图形，对扩展是开放的 */
 class OtherGraphic extends Shape {
   public OtherGraphic() {
-    super.m_type = 4;
+    super.mType = 4;
   }
 
   @Override

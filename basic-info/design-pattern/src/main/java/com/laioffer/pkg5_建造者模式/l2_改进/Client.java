@@ -3,14 +3,14 @@ package com.laioffer.pkg5_建造者模式.l2_改进;
 public class Client {
   public static void main(String[] args) {
 
-    CommonHouse commonHouse = new CommonHouse();
-    HouseDirector houseDirector = new HouseDirector(commonHouse);
-
+    HouseBuilder commonHouseBuilder = new CommonHouse();
+    HouseDirector houseDirector = new HouseDirector(commonHouseBuilder);
     House house = houseDirector.constructHouse();
+    System.out.println(house.getWall());
 
     System.out.println("--------------------------");
-    HighHouse highBuilding = new HighHouse();
-    houseDirector.setHouseBuilder(highBuilding);
+    HouseBuilder highHouseBuilder = new HighHouse();
+    houseDirector.setHouseBuilder(highHouseBuilder);
     houseDirector.constructHouse();
   }
 
