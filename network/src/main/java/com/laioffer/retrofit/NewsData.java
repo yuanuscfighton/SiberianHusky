@@ -7,9 +7,11 @@ import java.util.List;
 
 /**
  * 类的描述: 第2步：创建 服务端返回的数据类
+ *
  * Created by 春夏秋冬在中南 on 2023/9/24 20:56
  */
 public class NewsData implements Serializable {
+
   private static final long serialVersionUID = 2901111593401212409L;
   /**
    * code : 200

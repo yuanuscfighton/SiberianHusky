@@ -1,6 +1,7 @@
 package com.laioffer.okhttp.use1;
 
-import static com.laioffer.Constants.BASE_URL_1;
+import static com.laioffer.Constants.BASE_URL;
+import static com.laioffer.Constants.KEJI;
 import static com.laioffer.IgnoreConstants.API_KEY;
 
 import android.os.Bundle;
@@ -23,9 +24,10 @@ import okhttp3.Response;
 
 /**
  * 类的描述: okhttp使用2: POST请求
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/8/10 01:57
  */
-public class PostRequestActivity extends AppCompatActivity {
+public class PostRequestClient extends AppCompatActivity {
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class PostRequestActivity extends AppCompatActivity {
     // 1.创建OKHttpClient对象，类似我们要有一个浏览器
     OkHttpClient client = new OkHttpClient();
 
-    // 2.构建FormBody，传入参数
+    // 2.构建请求体，传入参数
     RequestBody requestBody = new FormBody.Builder()
         .add("key", API_KEY)
         .add("num", "5")
@@ -52,13 +54,12 @@ public class PostRequestActivity extends AppCompatActivity {
 
     // 3.构建Request对象，将FormBody作为POST方法的参数传入
     Request request = new Request.Builder()
-        .url(BASE_URL_1)
+        .url(BASE_URL + KEJI)
         .post(requestBody)
         .build();
 
     // 4.用client去创建请求任务
     Call task = client.newCall(request);
-    Response response = null;
     task.enqueue(new Callback() {
       @Override
       public void onFailure(@NonNull Call call, @NonNull IOException e) {
