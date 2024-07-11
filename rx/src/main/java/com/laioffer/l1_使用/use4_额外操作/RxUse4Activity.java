@@ -1,4 +1,4 @@
-package com.laioffer.l1_RxJava使用.use4_额外操作;
+package com.laioffer.l1_使用.use4_额外操作;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
@@ -22,6 +22,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * 类的描述: 【RxJava思维编程】版本4: 增加额外操作，给图片增加水印
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/6/20 00:03
  */
 public class RxUse4Activity extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class RxUse4Activity extends AppCompatActivity {
           public Bitmap apply(String s) throws Exception {
             Bitmap bitmap = null;
             URL url = new URL(PATH);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(5000);
             int resCode = connection.getResponseCode();
             if (resCode == HttpURLConnection.HTTP_OK) {

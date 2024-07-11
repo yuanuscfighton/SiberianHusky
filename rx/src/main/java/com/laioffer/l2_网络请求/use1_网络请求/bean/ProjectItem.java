@@ -1,4 +1,4 @@
-package com.laioffer.l2.use1_网络请求.bean;
+package com.laioffer.l2_网络请求.use1_网络请求.bean;
 
 import java.util.List;
 

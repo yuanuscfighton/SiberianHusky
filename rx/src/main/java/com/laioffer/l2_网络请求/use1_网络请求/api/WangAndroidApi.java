@@ -1,8 +1,8 @@
-package com.laioffer.l2.use1_网络请求.api;
+package com.laioffer.l2_网络请求.use1_网络请求.api;
 
 
-import com.laioffer.l2.use1_网络请求.bean.ProjectBean;
-import com.laioffer.l2.use1_网络请求.bean.ProjectItem;
+import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
+import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectItem;
 
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.GET;

@@ -1,4 +1,4 @@
-package com.laioffer.l1_RxJava使用.use1_开始;
+package com.laioffer.l1_使用.use1_开始;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,10 +8,12 @@ import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * 类的描述:【RxJava思维编程】版本1: 最基本的使用
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/6/19 23:55
  */
 public class RxUse1Activity extends AppCompatActivity {
 
+  // 事件
   private final static String PATH = "http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg";
 
   public void download() {

@@ -1,4 +1,4 @@
-package com.laioffer.l1_RxJava使用.use3_线程;
+package com.laioffer.l1_使用.use3_线程;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
@@ -19,6 +19,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * 类的描述: 【RxJava思维编程】版本3: 切换线程
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/6/20 00:02
  */
 public class RxUse3Activity extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class RxUse3Activity extends AppCompatActivity {
           public Bitmap apply(String s) throws Exception {
             Bitmap bitmap = null;
             URL url = new URL(PATH);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(5000);
             int resCode = connection.getResponseCode();
             if (resCode == HttpURLConnection.HTTP_OK) {

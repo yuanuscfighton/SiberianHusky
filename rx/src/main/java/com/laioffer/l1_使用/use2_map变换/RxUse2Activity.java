@@ -1,15 +1,10 @@
-package com.laioffer.l1_RxJava使用.use5_封装线程调度;
+package com.laioffer.l1_使用.use2_map变换;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.laioffer.tools.RxUtils;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,16 +16,23 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Function;
 
 /**
- * 类的描述: 【RxJava思维编程】版本5: 封装线程调度操作
- * Created by 春夏秋冬在中南 on 2023/6/20 00:05
+ * 类的描述: 【RxJava思维编程】版本2: 增加map变换
+ * <p>
+ * Created by 春夏秋冬在中南 on 2023/6/19 23:55
  */
-public class RxUse5Activity extends AppCompatActivity {
+public class RxUse2Activity extends AppCompatActivity {
 
-  public static final String TAG = RxUse5Activity.class.getSimpleName();
   private final static String PATH = "http://pic1.win4000.com/wallpaper/c/53cdd1f7c1f21.jpg";
 
   private ProgressDialog mProgressDialog;
 
+  /**
+   * 第1步: onSubscribe()订阅的开始  ← 预备
+   * 第2步: 分发事件 just(xxx)      ← 开始
+   * 第3步: map变换
+   * 第4步: 显示UI
+   * 第5步: 完成事件
+   */
   public void download() {
     // 第2步: 分发事件
     // 起点: (Observable，被观察者)
@@ -45,7 +47,7 @@ public class RxUse5Activity extends AppCompatActivity {
           public Bitmap apply(String s) throws Exception {
             Bitmap bitmap = null;
             URL url = new URL(PATH);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(5000);
             int resCode = connection.getResponseCode();
             if (resCode == HttpURLConnection.HTTP_OK) {
@@ -56,19 +58,6 @@ public class RxUse5Activity extends AppCompatActivity {
           }
         })
 
-        // 绘制水印
-        .map(new Function<Bitmap, Bitmap>() {
-          @Override
-          public Bitmap apply(Bitmap bitmap) throws Exception {
-            Paint paint = new Paint();
-            paint.setTextSize(88);
-            paint.setColor(Color.RED);
-            return drawTextToBitmap(bitmap, "大家好", paint, 88, 88);
-          }
-        })
-
-        .compose(RxUtils.rxud())
-
         // subscribe: 将「起点」和「终点」订阅起来
         .subscribe(new Observer<Bitmap>() { // 终点(Observer，观察者)
 
@@ -76,7 +65,8 @@ public class RxUse5Activity extends AppCompatActivity {
           // 一订阅，就弹出loading弹窗
           @Override
           public void onSubscribe(Disposable d) {
-            mProgressDialog = new ProgressDialog(RxUse5Activity.this);
+            mProgressDialog = new ProgressDialog(RxUse2Activity.this);
+            mProgressDialog.setTitle("加载中...");
             mProgressDialog.show();
           }
 
@@ -100,26 +90,5 @@ public class RxUse5Activity extends AppCompatActivity {
             }
           }
         });
-  }
-
-  // 图片上绘制文字 加水印
-  private Bitmap drawTextToBitmap(
-      Bitmap bitmap,
-      String text,
-      Paint paint,
-      int paddingLeft,
-      int paddingTop) {
-    Bitmap.Config bitmapConfig = bitmap.getConfig();
-
-    paint.setDither(true); // 获取跟清晰的图像采样
-    paint.setFilterBitmap(true);// 过滤一些
-    if (bitmapConfig == null) {
-      bitmapConfig = Bitmap.Config.ARGB_8888;
-    }
-    bitmap = bitmap.copy(bitmapConfig, true);
-    Canvas canvas = new Canvas(bitmap);
-
-    canvas.drawText(text, paddingLeft, paddingTop, paint);
-    return bitmap;
   }
 }
