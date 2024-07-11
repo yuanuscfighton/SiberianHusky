@@ -8,6 +8,7 @@ import kotlin.concurrent.thread
 
 /**
  * 类的描述: LiveData简单使用
+ *
  * Created by 春夏秋冬在中南 on 2023/9/16 21:10
  */
 class Demo1Activity : AppCompatActivity() {

@@ -12,6 +12,7 @@ import com.laioffer.R;
 
 /**
  * 类的描述: Glide最基本使用
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/6/6 23:27
  */
 public class Demo1Activity extends AppCompatActivity {
@@ -23,8 +24,8 @@ public class Demo1Activity extends AppCompatActivity {
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    btn = (Button)findViewById(R.id.btn_load);
-    img = (ImageView)findViewById(R.id.img);
+    btn = findViewById(R.id.btn_load);
+    img = findViewById(R.id.img);
 
     btn.setOnClickListener(v -> loadPic());
 
