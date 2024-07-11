@@ -11,7 +11,7 @@ public interface Observable {
   void removeObserver(Observer o);
 
   /**
-   * 被观察者发出了改变
+   * 被观察者发生了改变，通知观察者
    */
   void notifyObservers();
 

@@ -1,5 +1,7 @@
 package com.laioffer;
 
+import com.laioffer.network.BuildConfig;
+
 /**
  * 类描述: 常量
  * <p>
@@ -9,7 +11,10 @@ package com.laioffer;
  */
 public class Constants {
 
-  public static final String BASE_URL_1 = "https://apis.tianapi.com/keji/index";
+  public static final String BASE_URL = "https://apis.tianapi.com";
 
-  public static final String BASE_URL_2 = "https://apis.tianapi.com";
+  public static final String KEJI = "/kepi/index";
+
+  public static final String PUBLIC_API_KEY = BuildConfig.isPublic ? "YOUR_API_KEY..." : IgnoreConstants.API_KEY;
+
 }

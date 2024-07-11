@@ -33,7 +33,7 @@ public class Activity7 extends AppCompatActivity {
             new ObservableOnSubscribe<String>() {
               @Override
               public void subscribe(@NonNull ObservableEmitter<String> emitter) {
-
+                emitter.onNext("xxxx");
               }
             })
 

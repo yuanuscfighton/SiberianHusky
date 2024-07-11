@@ -1,14 +1,14 @@
 package com.laioffer.source.okhttp3.internal.http
 
-import com.laioffer.source.okhttp3.internal.connection.Exchange
-import com.laioffer.source.okhttp3.internal.connection.RealCall
-import com.laioffer.source.okhttp3.internal.connection.RouteException
 import com.laioffer.source.okhttp3.Interceptor
 import com.laioffer.source.okhttp3.OkHttpClient
 import com.laioffer.source.okhttp3.Request
 import com.laioffer.source.okhttp3.Response
 import com.laioffer.source.okhttp3.internal.canReuseConnectionFor
 import com.laioffer.source.okhttp3.internal.closeQuietly
+import com.laioffer.source.okhttp3.internal.connection.Exchange
+import com.laioffer.source.okhttp3.internal.connection.RealCall
+import com.laioffer.source.okhttp3.internal.connection.RouteException
 import com.laioffer.source.okhttp3.internal.http.StatusLine.Companion.HTTP_MISDIRECTED_REQUEST
 import com.laioffer.source.okhttp3.internal.http.StatusLine.Companion.HTTP_PERM_REDIRECT
 import com.laioffer.source.okhttp3.internal.http.StatusLine.Companion.HTTP_TEMP_REDIRECT
@@ -214,6 +214,7 @@ class RetryAndFollowUpInterceptor(private val client: OkHttpClient) : Intercepto
 
     val method = userResponse.request.method
     when (responseCode) {
+      // 407 表示配置了代理，代理需要鉴权。例如，付费代理，需要验证身份
       HTTP_PROXY_AUTH -> {
         val selectedProxy = route!!.proxy
         if (selectedProxy.type() != Proxy.Type.HTTP) {
@@ -222,6 +223,7 @@ class RetryAndFollowUpInterceptor(private val client: OkHttpClient) : Intercepto
         return client.proxyAuthenticator.authenticate(route, userResponse)
       }
 
+      // 401 表示服务端需要鉴权，比如，有些接口需要特殊身份才可以访问
       HTTP_UNAUTHORIZED -> return client.authenticator.authenticate(route, userResponse)
 
       HTTP_PERM_REDIRECT, HTTP_TEMP_REDIRECT, HTTP_MULT_CHOICE, HTTP_MOVED_PERM, HTTP_MOVED_TEMP, HTTP_SEE_OTHER -> {

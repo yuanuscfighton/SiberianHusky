@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.laioffer.app.R;
 
 /**
  * Gif 动画图片
