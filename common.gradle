@@ -27,9 +27,7 @@ ext {
 //            "stetho"                     : "com.facebook.stetho:stetho:1.6.0",
 //            // https://mvnrepository.com/artifact/com.facebook.stetho/stetho-okhttp3
 //            "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.6.0",
-//            // OkHttp
-//            "okhttp3"                    : "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
-//            "okhttp3-logging-intercepter": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11",
+
 //            // Retrofit2
 //            "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.9.0",
 //            "retrofit2-mock"             : "com.squareup.retrofit2:retrofit-mock:2.9.0",

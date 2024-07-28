@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.laioffer.ui'
+    namespace 'com.laioffer.source'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.laioffer.ui"
+        applicationId "com.laioffer.source"
         minSdk 24
         targetSdk 34
         versionCode 1
