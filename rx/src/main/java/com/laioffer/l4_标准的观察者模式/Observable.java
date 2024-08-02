@@ -1,8 +1,7 @@
 package com.laioffer.l4_标准的观察者模式;
 
 /**
- * 类的描述: 抽象层 被观察者
- * Created by 春夏秋冬在中南 on 2023/7/30 18:36
+ * 抽象层 被观察者
  */
 public interface Observable {
 

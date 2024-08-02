@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 类的描述: 具体的被观察者角色，e.g. 微信服务号，当消息有更新的时候，将消息推送给观察者
- * Created by 春夏秋冬在中南 on 2023/7/30 18:39
+ * 具体的被观察者角色，e.g. 微信服务号，当消息有更新的时候，将消息推送给观察者
  */
 public class WechatServerObservable implements Observable {
 

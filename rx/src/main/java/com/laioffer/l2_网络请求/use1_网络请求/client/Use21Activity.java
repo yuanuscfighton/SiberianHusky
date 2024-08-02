@@ -5,7 +5,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.laioffer.l2_网络请求.use1_网络请求.api.WangAndroidApi;
+import com.laioffer.l2_网络请求.use1_网络请求.api.WanAndroidApi;
 import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
 import com.laioffer.l2_网络请求.use1_网络请求.util.HttpUtil;
 import com.laioffer.rx.R;
@@ -21,12 +21,11 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  * 类的描述: Rx使用场景1: Retrofit+RxJava查询xxx
  * Created by 春夏秋冬在中南 on 2023/7/29 21:31
  */
-@SuppressWarnings("ResultOfMethodCallIgnored")
 public class Use21Activity extends AppCompatActivity {
 
   private final static String TAG = Use21Activity.class.getSimpleName();
 
-  private WangAndroidApi api;
+  private WanAndroidApi api;
   private Disposable mGetProjectDisposable;
   private Disposable mGetItemDisposable;
 
@@ -36,7 +35,7 @@ public class Use21Activity extends AppCompatActivity {
     setContentView(R.layout.layout21);
 
     // 初始化
-    api = HttpUtil.getOnlineCookieRetrofit().create(WangAndroidApi.class);
+    api = HttpUtil.getOnlineCookieRetrofit().create(WanAndroidApi.class);
 
     // 按钮1: 获取项目的整个分类的数据
     findViewById(R.id.l21_use1_button1).setOnClickListener(v -> {

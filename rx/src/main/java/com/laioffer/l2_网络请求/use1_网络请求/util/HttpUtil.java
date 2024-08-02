@@ -43,9 +43,9 @@ public class HttpUtil {
         .client(okHttpClient)
 
         /** ******************** 回来的数据: 使用RxJava处理 ******************/
-        // Gson: 解析Json的工具，将json字符串解析成JavaBean对象
+        // Gson: 解析Json的工具，可以将 json 字符串解析成 JavaBean 对象
         .addConverterFactory(GsonConverterFactory.create(new Gson()))
-        // RxJava处理工具
+        // 添加 RxJava 处理工具
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .build();
   }
