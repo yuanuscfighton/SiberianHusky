@@ -1,22 +1,17 @@
 package com.laioffer.l4_标准的观察者模式;
 
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 /**
- * 类的描述: 测试类
+ * 类的描述: 标准的观察者设计模式
+ * <p>
  * Created by 春夏秋冬在中南 on 2023/7/30 18:43
  */
-public class Activity4 extends AppCompatActivity {
+public class Client4 {
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+  public static void main(String[] args) {
+    test();
   }
 
-  private void test() {
+  private static void test() {
     String message = "学习android";
 
     // 创建一个微信公众号服务 ← 被观察者

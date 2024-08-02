@@ -13,7 +13,7 @@ import retrofit2.http.Query;
  * 类的描述: 客户端api
  * Created by 春夏秋冬在中南 on 2023/7/29 21:25
  */
-public interface WangAndroidApi {
+public interface WanAndroidApi {
 
   /**
    * 获取总数据
