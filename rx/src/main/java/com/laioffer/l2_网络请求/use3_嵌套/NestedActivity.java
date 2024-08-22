@@ -3,35 +3,29 @@ package com.laioffer.l2_网络请求.use3_嵌套;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.jakewharton.rxbinding4.view.RxView;
-import com.laioffer.l2_网络请求.use1_网络请求.api.WanAndroidApi;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectItem;
-import com.laioffer.l2_网络请求.use1_网络请求.util.HttpUtil;
+import com.laioffer.l2_网络请求.use1_请求.api.WanAndroidApi;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectBean;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectItem;
+import com.laioffer.l2_网络请求.use1_请求.util.HttpUtil;
 import com.laioffer.rx.R;
 import com.laioffer.tools.RxUtils;
-
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableSource;
 import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.functions.Function;
-import io.reactivex.rxjava3.schedulers.Schedulers;
-import kotlin.Unit;
 
 /**
- * 类的描述: Rx使用场景2: 功能防抖 + 网络嵌套
+ * 类的描述: Rx使用场景3: 网络嵌套
  * Created by 春夏秋冬在中南 on 2023/7/29 22:41
  */
-public class Use23Activity extends AppCompatActivity {
+public class NestedActivity extends AppCompatActivity {
 
-  private final static String TAG = Use23Activity.class.getSimpleName();
+  private final static String TAG = NestedActivity.class.getSimpleName();
 
   private WanAndroidApi api;
 

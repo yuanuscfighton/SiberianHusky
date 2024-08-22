@@ -20,7 +20,7 @@ class MainActivity3 : AppCompatActivity() {
     val button = findViewById<Button>(R.id.button)
     button.setOnClickListener {
 
-      // 先修改数据，再跳转到MainActivity4
+      // 第1步：先修改数据，
       // version++  == 0   第1步
       MyLiveData.value1.value = "我就是我，不一样的烟火1" // 以前的旧数据
       MyLiveData.value1.value = "我就是我，不一样的烟火2" // 以前的旧数据
@@ -28,6 +28,7 @@ class MainActivity3 : AppCompatActivity() {
       MyLiveData.value1.value = "我就是我，不一样的烟火4" // 以前的旧数据
       MyLiveData.value1.value = "我就是我，不一样的烟火5" // 以前的旧数据
 
+      // 第2步：再跳转到MainActivity4
       startActivity(Intent(this, MainActivity4::class.java))
     }
   }

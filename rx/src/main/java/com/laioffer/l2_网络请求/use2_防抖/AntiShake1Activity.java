@@ -1,4 +1,4 @@
-package com.laioffer.l2_网络请求.use2_防抖_嵌套;
+package com.laioffer.l2_网络请求.use2_防抖;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jakewharton.rxbinding4.view.RxView;
-import com.laioffer.l2_网络请求.use1_网络请求.api.WanAndroidApi;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
-import com.laioffer.l2_网络请求.use1_网络请求.util.HttpUtil;
+import com.laioffer.l2_网络请求.use1_请求.api.WanAndroidApi;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectBean;
+import com.laioffer.l2_网络请求.use1_请求.util.HttpUtil;
 import com.laioffer.rx.R;
 
 import java.util.concurrent.TimeUnit;
@@ -22,7 +22,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import kotlin.Unit;
 
 /**
- * 类的描述: Rx使用场景2: 功能防抖 + 网络嵌套
+ * 类的描述: Rx使用场景2: 功能防抖
  * Created by 春夏秋冬在中南 on 2023/7/29 22:41
  */
 public class AntiShake1Activity extends AppCompatActivity {

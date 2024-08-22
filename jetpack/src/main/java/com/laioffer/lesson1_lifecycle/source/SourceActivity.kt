@@ -17,4 +17,8 @@ class SourceActivity : AppCompatActivity() {
 
     lifecycle.addObserver(MyLocationListener())
   }
+
+  override fun onStart() {
+    super.onStart()
+  }
 }

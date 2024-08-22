@@ -10,8 +10,7 @@ class MainActivity4 : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.empty_layout)
 
-    // 我后观察数据，居然能够收到 前面修改的数据 <== 这就是「数据黏性」
-    // 第2步
+    // 第3步：先改变数据，后观察，居然能够收到 前面修改的数据 <== 这就是「数据黏性」
     MyLiveData.value1.observe(this) { t ->
       Toast.makeText(
         this@MainActivity4,
