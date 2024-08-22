@@ -12,6 +12,8 @@ import com.laioffer.R
 class Demo4Activity : AppCompatActivity() {
 
   private var myPresenter: IPresenter? = null
+  private var myPresenter1: IPresenter? = null
+  private var myPresenter2: IPresenter? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -19,5 +21,8 @@ class Demo4Activity : AppCompatActivity() {
 
     myPresenter = MyPresenter() // 用户端只需要面向接口编程，想用哪个实现类，直接new那个实现类
     lifecycle.addObserver(myPresenter!!)
+
+    myPresenter1 = MyPresenter1()
+    lifecycle.addObserver(myPresenter1!!)
   }
 }

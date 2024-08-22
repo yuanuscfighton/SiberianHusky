@@ -1,13 +1,13 @@
-package com.laioffer.l2_网络请求.use1_网络请求.client;
+package com.laioffer.l2_网络请求.use1_请求.client;
 
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.laioffer.l2_网络请求.use1_网络请求.api.WanAndroidApi;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
-import com.laioffer.l2_网络请求.use1_网络请求.util.HttpUtil;
+import com.laioffer.l2_网络请求.use1_请求.api.WanAndroidApi;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectBean;
+import com.laioffer.l2_网络请求.use1_请求.util.HttpUtil;
 import com.laioffer.rx.R;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -21,9 +21,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  * 类的描述: Rx使用场景1: Retrofit+RxJava查询xxx
  * Created by 春夏秋冬在中南 on 2023/7/29 21:31
  */
-public class Use21Activity extends AppCompatActivity {
+public class HttpRequestActivity extends AppCompatActivity {
 
-  private final static String TAG = Use21Activity.class.getSimpleName();
+  private final static String TAG = HttpRequestActivity.class.getSimpleName();
 
   private WanAndroidApi api;
   private Disposable mGetProjectDisposable;
@@ -51,6 +51,7 @@ public class Use21Activity extends AppCompatActivity {
 
   /**
    * Retrofit+RxJava 获取项目的整个分类的数据
+   * <p>
    * 使用Consumer
    */
   public void getAllCategoriesData1() {
@@ -58,16 +59,18 @@ public class Use21Activity extends AppCompatActivity {
     mGetProjectDisposable = api.getProject()
         .subscribeOn(Schedulers.io()) // 给上面分配异步线程
         .observeOn(AndroidSchedulers.mainThread()) // 给下面分配主线程
-        .subscribe(new Consumer<ProjectBean>() { // Consumer简化版本的Observer
-          @Override
-          public void accept(ProjectBean projectBean) {
-            Log.d(TAG, "accept: " + projectBean); // UI 可以做事情
-          }
-        });
+        .subscribe(
+            new Consumer<ProjectBean>() { // Consumer 简化版本的 Observer
+              @Override
+              public void accept(ProjectBean projectBean) {
+                Log.d(TAG, "accept: " + projectBean); // UI 可以做事情
+              }
+            });
   }
 
   /**
    * Retrofit+RxJava 获取项目的整个分类的数据
+   * <p>
    * 使用Observer
    */
   public void getAllCategoriesData2() {
@@ -106,8 +109,7 @@ public class Use21Activity extends AppCompatActivity {
     // 上面的项目分类会查询出："id": 294,"id": 402,"id": 367,"id": 323,"id": 314, ...
 
     // id 写死的
-    mGetItemDisposable = api.getProjectItem(1, 294)
-        // .....
+    mGetItemDisposable = api.getProjectItem(1, 294) // api.getProjectItem(1, 294) 这就是起点，因为返回的是 Observable
         .subscribeOn(Schedulers.io()) // 上面 异步
         .observeOn(AndroidSchedulers.mainThread()) // 下面 主线程
         .subscribe(data -> {

@@ -1,8 +1,9 @@
-package Kotlin基础.pkg3_构造方法
+package com.laioffer.Kotlin基础.pkg3_构造方法
 
 /**
- * @description 方法2:secondary构造方法
- * @date 2023/1/29 14:45
+ * Kotlin构造方法详解
+ *
+ * 方法2:secondary构造方法
  */
 class Person2 constructor(username: String) {
 
@@ -17,7 +18,7 @@ class Person2 constructor(username: String) {
     this.address = "beijing"
   }
 
-  // ////////// 这是第1个secondary构造方法 ////////////////////
+  /********** 这是第1个secondary构造方法 ***********/
   // ⚠️ 一个secondary构造方法必须要直接或间接的调用它的primary构造方法
   // 这里的冒号就表示调用了primary构造方法，而且这里是直接调用了primary构造方法
   constructor(username: String, age: Int) : this(username) {
@@ -28,7 +29,8 @@ class Person2 constructor(username: String) {
   }
   // 说明:secondary构造方法没有名字
 
-  // ////////// 这是第2个secondary构造方法 ////////////////////
+
+  /********** 这是第2个secondary构造方法 ***********/
   // 这里是间接的调用了primary构造方法
   constructor(username: String, age: Int, address: String) : this(username, age) {
     println("带3个参数的secondary构造方法, username=$username, age=$age, address=$address")

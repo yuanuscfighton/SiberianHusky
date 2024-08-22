@@ -1,4 +1,4 @@
-package com.laioffer.l2_网络请求.use2_防抖_嵌套;
+package com.laioffer.l2_网络请求.use2_防抖;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -8,10 +8,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jakewharton.rxbinding4.view.RxView;
-import com.laioffer.l2_网络请求.use1_网络请求.api.WanAndroidApi;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectBean;
-import com.laioffer.l2_网络请求.use1_网络请求.bean.ProjectItem;
-import com.laioffer.l2_网络请求.use1_网络请求.util.HttpUtil;
+import com.laioffer.l2_网络请求.use1_请求.api.WanAndroidApi;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectBean;
+import com.laioffer.l2_网络请求.use1_请求.bean.ProjectItem;
+import com.laioffer.l2_网络请求.use1_请求.util.HttpUtil;
 import com.laioffer.rx.R;
 import com.laioffer.tools.RxUtils;
 
@@ -50,8 +50,6 @@ public class AntiShake2Activity extends AppCompatActivity {
   }
 
   /**
-   * RxBinding 防抖
-   * <p>
    * 功能防抖 + 网络嵌套请求
    *
    * @noinspection ResultOfMethodCallIgnored

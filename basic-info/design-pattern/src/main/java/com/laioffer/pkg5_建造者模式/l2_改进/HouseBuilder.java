@@ -2,7 +2,7 @@ package com.laioffer.pkg5_建造者模式.l2_改进;
 
 
 /**
- * 抽象的建造者
+ * 抽象的建造者，负责把建造的流程写清楚
  */
 public abstract class  HouseBuilder {
 

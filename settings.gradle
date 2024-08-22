@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Husky"
+include ':siberian-husky'
 include ':app'
 include ':arouter'
 include ':basic-info'

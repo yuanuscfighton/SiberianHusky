@@ -1,11 +1,11 @@
 package com.laioffer.Kotlin基础.pkg3_构造方法
 
 /**
- * @description 成员变量未初始化
- * @date 2023/1/29 14:41
+ * Kotlin构造方法详解
  */
 class Person constructor(username: String) {
 
+  // 1.成员变量未初始化
   // 错误写法:
   //  private var username: String
   //  private var age: Int
